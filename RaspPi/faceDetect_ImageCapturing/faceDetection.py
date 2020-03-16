@@ -1,9 +1,3 @@
-'''
-Haar Cascade Face detection with OpenCV  
-    Based on tutorial by pythonprogramming.net
-    Visit original post: https://pythonprogramming.net/haar-cascade-face-eye-detection-python-opencv-tutorial/  
-Adapted by Marcelo Rovai - MJRoBot.org @ 7Feb2018 
-'''
 
 import numpy as np
 import cv2
@@ -75,7 +69,7 @@ while True:
     k = cv2.waitKey(30) & 0xff
     if k == 27: # press 'ESC' to quit
         files = {'FileField': open('testingBlueBox.png', 'rb')}
-        r = requests.post(URL, data=data, files=files)
+        #r = requests.post(URL, data=data, files=files)
         break
 
 print(server.local_bind_port)  # show assigned local port
