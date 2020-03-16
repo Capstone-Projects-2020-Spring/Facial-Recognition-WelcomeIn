@@ -3,7 +3,7 @@ import requests
 import wget
 
 remote_user = 'sean.droke'
-remote_host = '10.0.0.146'
+remote_host = '68.81.115.174'
 remote_port = 22
 local_host = '127.0.0.1'
 local_port = 8007
@@ -22,9 +22,7 @@ URL = "http://127.0.0.1:8007/footage/"
 
 location = "Sean's House"
 
-image = open('test.jpg', 'rb').read()
-
-files = {'FileField': open('test.jpg', 'rb')}
+files = {'FileField': open('testingBlueBox.png', 'rb')}
 
 data = {'FileDescriptor': 'test'}
 
@@ -32,7 +30,7 @@ proxies = {
     "http": "http://127.0.0.1:8080",
     }
 
-#r = requests.post(URL, data=data, files=files)
+r = requests.post(URL, data=data, files=files)
 
 #r = requests.get(URL, stream=True)
 
