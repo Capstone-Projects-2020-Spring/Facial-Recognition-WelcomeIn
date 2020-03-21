@@ -17,6 +17,7 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
+import { NativeRouter, Route, Link } from "react-router-native";
 
 
 const getWidth = () => {
