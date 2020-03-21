@@ -10,9 +10,11 @@ function Home() {
       <a class="active item">
         Home
       </a>
-        <a className="item">
-          Authorized Individuals
-      </a>
+      <Link href="/users">
+          <a className="item">
+          Authroized Individuals
+            </a>
+        </Link>
       <a className="item">
           Notifications
       </a> 
