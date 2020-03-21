@@ -19,5 +19,6 @@ from footage import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView')
+    path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
+    path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView')
 ]
