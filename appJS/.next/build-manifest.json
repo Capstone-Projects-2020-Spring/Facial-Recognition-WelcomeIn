@@ -31,10 +31,6 @@
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/video": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
