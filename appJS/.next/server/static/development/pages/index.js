@@ -1827,20 +1827,28 @@ function Home() {
       lineNumber: 10,
       columnNumber: 7
     }
-  }, "Home"), __jsx("a", {
-    className: "item",
+  }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/users",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13,
-      columnNumber: 9
+      columnNumber: 7
     }
-  }, "Authorized Individuals"), __jsx("a", {
+  }, __jsx("a", {
     className: "item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 14,
+      columnNumber: 11
+    }
+  }, "Authroized Individuals")), __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 7
     }
   }, "Notifications"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1848,7 +1856,7 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -1856,7 +1864,7 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 22,
       columnNumber: 11
     }
   }, "Footage"))));

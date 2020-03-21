@@ -4330,11 +4330,59 @@ function Footage() {
       lineNumber: 10,
       columnNumber: 7
     }
-  }), __jsx("div", {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/index",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 11
+    }
+  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/users",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 7
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }, "Authroized Individuals")), __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 7
+    }
+  }, "Notifications"), __jsx("a", {
+    "class": "active item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 7
+    }
+  }, "Footage")), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -4342,7 +4390,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -4350,7 +4398,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 32,
       columnNumber: 3
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
@@ -4358,7 +4406,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 35,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -4366,7 +4414,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 36,
       columnNumber: 7
     }
   }, "Video")), __jsx("div", {
@@ -4374,7 +4422,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 38,
       columnNumber: 5
     }
   }, "Last Activity: Today"), __jsx("div", {
@@ -4382,14 +4430,14 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 39,
       columnNumber: 5
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 40,
       columnNumber: 7
     }
   }, "View Video Footage recorded from the security cameras.")))), __jsx("div", {
@@ -4397,7 +4445,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 47,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -4405,7 +4453,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 48,
       columnNumber: 3
     }
   }, __jsx("div", {
@@ -4413,7 +4461,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 49,
       columnNumber: 5
     }
   }, "Photos"), __jsx("div", {
@@ -4421,7 +4469,7 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 50,
       columnNumber: 5
     }
   }, "Last Activity: 2 Days ago"), __jsx("div", {
@@ -4429,14 +4477,14 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 52,
       columnNumber: 7
     }
   }, "view Headshots of Indiviuals who have entered the premeises via security cameras."))))));
