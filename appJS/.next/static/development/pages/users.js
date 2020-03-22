@@ -18969,10 +18969,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./":
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53206,7 +53206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/users.js";
+var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/users.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -53269,20 +53269,28 @@ function Users() {
       lineNumber: 18,
       columnNumber: 5
     }
-  }, "Authroized Individuals"), __jsx("a", {
-    className: "item",
+  }, "Authroized Individuals"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/settings",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21,
       columnNumber: 7
     }
-  }, "Notifications"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 11
+    }
+  }, "Notification Settings")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/footage",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -53290,21 +53298,21 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, "Footage"))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 7
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 34,
       columnNumber: 13
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
@@ -53312,14 +53320,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 35,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 36,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53335,14 +53343,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53358,14 +53366,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 58,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53381,14 +53389,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 59,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 69,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53404,7 +53412,7 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 17
     }
   }))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
@@ -53412,14 +53420,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 82,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53435,14 +53443,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 94,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53458,14 +53466,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 95,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 105,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53481,14 +53489,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 106,
       columnNumber: 17
     }
   })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 116,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53504,7 +53512,7 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 117,
       columnNumber: 17
     }
   }))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
@@ -53512,14 +53520,14 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 129,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 130,
       columnNumber: 17
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
@@ -53535,7 +53543,7 @@ function Users() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 131,
       columnNumber: 17
     }
   }))))));
@@ -53545,14 +53553,14 @@ function Users() {
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ 4:
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
+  \******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./");
 
 
 /***/ }),
@@ -53568,5 +53576,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=users.js.map

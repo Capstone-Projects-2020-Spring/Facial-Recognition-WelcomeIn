@@ -542,10 +542,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js!./":
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js!./":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4292,7 +4292,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/footage.js";
+var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/footage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -4494,14 +4494,14 @@ function Footage() {
 
 /***/ }),
 
-/***/ 1:
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js ***!
-  \***********************************************************************************************************************************************************************************************************/
+/***/ 5:
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffootage&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Ffootage.js!./");
 
 
 /***/ }),
@@ -4517,5 +4517,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=footage.js.map

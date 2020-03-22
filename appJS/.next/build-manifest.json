@@ -32,11 +32,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/users": [
+    "/settings": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/video": [
+    "/users": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
