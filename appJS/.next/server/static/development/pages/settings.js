@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1792,7 +1792,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
-      columnNumber: 9
+      columnNumber: 5
     }
   }, __jsx("link", {
     rel: "stylesheet",
@@ -1801,7 +1801,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8,
-      columnNumber: 5
+      columnNumber: 7
     }
   }), __jsx("h1", {
     class: "ui header",
@@ -1809,7 +1809,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9,
-      columnNumber: 5
+      columnNumber: 7
     }
   }, "WelcomeIN"), __jsx("div", {
     class: "ui inverted menu",
@@ -1817,15 +1817,15 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10,
-      columnNumber: 5
+      columnNumber: 7
     }
   }, __jsx("a", {
-    class: "active item",
+    class: "item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11,
-      columnNumber: 5
+      columnNumber: 9
     }
   }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/users",
@@ -1833,7 +1833,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
-      columnNumber: 5
+      columnNumber: 9
     }
   }, __jsx("a", {
     className: "item",
@@ -1841,7 +1841,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
-      columnNumber: 9
+      columnNumber: 11
     }
   }, "Authroized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/settings",
@@ -1849,15 +1849,15 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19,
-      columnNumber: 7
+      columnNumber: 9
     }
   }, __jsx("a", {
-    className: "item",
+    className: "active item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
-      columnNumber: 9
+      columnNumber: 11
     }
   }, "Notification Settings            ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/footage",
@@ -1865,7 +1865,7 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
-      columnNumber: 7
+      columnNumber: 9
     }
   }, __jsx("a", {
     className: "item",
@@ -1873,16 +1873,64 @@ function settings() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24,
+      columnNumber: 11
+    }
+  }, "Footage"))), "-", __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    class: "ui center aligned grid",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 7
+    }
+  }, __jsx("h2", {
+    class: "ui icon header",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
       columnNumber: 9
     }
-  }, "Footage"))));
+  }, __jsx("i", {
+    class: "settings icon",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 11
+    }
+  }), __jsx("div", {
+    class: "content",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 11
+    }
+  }, "Account Settings", __jsx("div", {
+    class: "sub header",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 5
+    }
+  }, "Manage your account settings and set e-mail preferences."))))) //ending page 
+  ;
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (settings);
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*********************************!*\
   !*** multi ./pages/settings.js ***!
   \*********************************/
