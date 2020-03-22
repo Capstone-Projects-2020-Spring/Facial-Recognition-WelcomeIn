@@ -18,9 +18,11 @@ function Users() {
     <a class="active item">
       Authroized Individuals
       </a>
-      <a className="item">
-          Notifications
-      </a> 
+      <Link href="/settings">
+          <a className="item">
+          Notification Settings
+            </a>
+        </Link>
         <Link href="/footage">
           <a className="item">
           Footage
