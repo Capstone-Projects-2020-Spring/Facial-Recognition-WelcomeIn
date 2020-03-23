@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from footage import views
+from login import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', views.UpdateProfile, name='UpdateProfile'),
     path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
     path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView')
 ]
