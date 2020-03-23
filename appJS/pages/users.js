@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Divider, Button, Header, Modal, Input, Form } from 'semantic-ui-react'
 import React from 'react'
 
 
@@ -18,9 +18,11 @@ function Users() {
     <a class="active item">
       Authroized Individuals
       </a>
-      <a className="item">
-          Notifications
-      </a> 
+      <Link href="/settings">
+          <a className="item">
+          Notification Settings
+            </a>
+        </Link>
         <Link href="/footage">
           <a className="item">
           Footage
@@ -28,6 +30,40 @@ function Users() {
         </Link>
 
     </div>
+
+    <div> 
+        <Modal trigger = {
+            <button class="medium ui button">
+                Add Authroized Individual
+            </button>
+        }>
+            <Modal.Header>Select a Photo</Modal.Header>
+                <Modal.Content image>
+                <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
+                    <Modal.Description>
+                        <Header>Upload a photo of authorized individual</Header>
+                        <p>
+                        <form className="ui form">
+                    <div className="field">
+                        <label></label>
+                        <input name="image" type="text" placeholder="image...">
+                        </input>
+                        <Divider horizontal></Divider>
+                        <button class="small ui button">
+                            Upload Image
+                        </button>
+
+                    </div>
+                </form>
+                        </p>
+                    </Modal.Description>
+                </Modal.Content>
+        </Modal>
+        <Divider horizontal></Divider>
+        <div class="ui fitted divider"></div>
+        <Divider horizontal></Divider>
+    </div>
+
       <div>
             <Grid>
                 <Grid.Row columns={4}>
