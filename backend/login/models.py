@@ -7,6 +7,8 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     PhoneNumber = models.TextField(max_length=50, blank=True)
+    ConfiguredAlerts = models.TextField()
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -29,6 +31,7 @@ class FootageHandler(models.Model):
     
 class AlertHandler(models.Model):
     Message = models.TextField(blank=False)
+    MessageType = models.TextField(blank=False)
     MessageDate = models.DateTimeField(auto_now_add=True)
     UserPhoneNumber = models.TextField(max_length=50, blank=True) #from user table
     UserEmail = models.EmailField(blank=False) #from user table
