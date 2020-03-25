@@ -20,7 +20,7 @@ from login import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
-    path('login/', views.UpdateProfile, name='UpdateProfile')
-
+    path('login/', views.UpdateProfile, name='UpdateProfile'),
+    path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
+    path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView')
 ]
