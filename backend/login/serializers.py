@@ -13,7 +13,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         model = Profile
         fields = ['PhoneNumber']
 
-class FriendlyFaceSerializer(serializers.ModelSerializer):
+class FriendlyFacesHandlerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FriendlyFacesHandler

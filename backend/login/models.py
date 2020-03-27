@@ -6,8 +6,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    PhoneNumber = models.TextField(max_length=50, blank=True)
-    ConfiguredAlerts = models.TextField()
+    PhoneNumber = models.CharField(max_length=50, blank=True)
 
 
 @receiver(post_save, sender=User)
@@ -30,10 +29,10 @@ class FootageHandler(models.Model):
     FileDescriptor = models.CharField(max_length=100, blank=True)
     
 class AlertHandler(models.Model):
-    Message = models.TextField(blank=False)
-    MessageType = models.TextField(blank=False)
+    Message = models.CharField(max_length=100)
+    MessageType = models.CharField(max_length=100)
     MessageDate = models.DateTimeField(auto_now_add=True)
-    UserPhoneNumber = models.TextField(max_length=50, blank=True) #from user table
+    UserPhoneNumber = models.CharField(max_length=50, blank=True) #from user table
     UserEmail = models.EmailField(blank=False) #from user table
     AlertImage = models.ImageField(upload_to='mediaLib/')
     

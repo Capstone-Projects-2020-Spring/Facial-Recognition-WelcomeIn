@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Redirect after logging in
+LOGIN_REDIRECT_URL = '/admin'
