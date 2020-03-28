@@ -3,6 +3,8 @@ from django.core.files import File
 from .models import FootageHandler, FriendlyFacesHandler
 from django.views.decorators.csrf import csrf_exempt
 import os
+from django.contrib.auth.models import User
+from rest_framework.response import Response
 
 @csrf_exempt
 def FootageHandlerFormView(request):
@@ -68,3 +70,7 @@ def FriendlyFacesHandlerFormView(request):
 
         return HttpResponse(image_data, content_type="image/jpeg")
 
+def update_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.PhoneNumber = '123-456-7890'
+    user.save()

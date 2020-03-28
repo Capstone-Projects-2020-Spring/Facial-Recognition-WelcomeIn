@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from login.models import Profile, FriendlyFacesHandler, FootageHandler, AlertHandler
+from .models import Profile, FriendlyFacesHandler, FootageHandler, AlertHandler
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

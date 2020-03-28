@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from footage import views
+from django.contrib.auth.views import LoginView
 
 
 urlpatterns = [
+    path('', LoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
-    path('login/', include('login.urls')),
     path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
     path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView')
 ]
