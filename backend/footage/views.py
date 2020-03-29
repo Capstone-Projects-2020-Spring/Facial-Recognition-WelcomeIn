@@ -1,6 +1,8 @@
 from django.http import HttpResponse, FileResponse
 from django.core.files import File
+from django.shortcuts import render
 from .models import FootageHandler, FriendlyFacesHandler
+from .forms import UserForm, ProfileForm
 from django.views.decorators.csrf import csrf_exempt
 import os
 from django.contrib.auth.models import User
@@ -70,7 +72,20 @@ def FriendlyFacesHandlerFormView(request):
 
         return HttpResponse(image_data, content_type="image/jpeg")
 
-def update_profile(request, user_id):
+def UpdateProfile(request, user_id):
     user = User.objects.get(pk=user_id)
     user.profile.PhoneNumber = '123-456-7890'
     user.save()
+
+def CreateUserView(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        profile_form = ProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+        if profile_form.is_valid():
+                profile_form.save()
+    else:
+        form = UserForm()
+        profile_form = ProfileForm()
+    return render(request, 'registration/create_user.html', {'form': form, 'profile_form': profile_form})

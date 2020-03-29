@@ -23,5 +23,6 @@ urlpatterns = [
     path('', LoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
     path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
-    path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView')
+    path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView'),
+    path('create_user/', views.CreateUserView)
 ]
