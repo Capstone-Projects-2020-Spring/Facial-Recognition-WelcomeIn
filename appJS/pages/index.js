@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from "react";
+import { Image, Divider, Button, Header, Modal, Input, Form, Segment, Label } from 'semantic-ui-react'
 import axios from "axios"
 
 function Home() {
@@ -43,6 +44,7 @@ function Home() {
     <div style={{ paddingLeft: '8px' }}>
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
       <h1 class="ui header">WelcomeIN</h1>
+      
       <div class="ui inverted menu">
         <a class="active item">
           Home
@@ -61,8 +63,51 @@ function Home() {
             Footage
       </a>
         </Link>
+    <div class="ui container">
+    <div class=" ui clearing segment">
+    <div>
+      <a className="item" style={{textAlign: "right"}}>
+        <Modal trigger = {
+          <Button style={{textAlign: "right"}}>Login</Button>
+        }>
+            <Modal.Header>WelcomeIN</Modal.Header>
+            <Modal.Content>
+                    <Modal.Description>
+                        <Header>Log In</Header>
+                        <p>
+                        <form className="ui form">
+                        <div className="field">
+                        <label>Email</label>
+                        <input name="email" type="text" placeholder="example@gmail.com">
+                        </input>
+                        <Divider horizontal></Divider>
+                        <label>Password</label>
+                        <input name="password" type="text" placeholder="Password...">
+                        </input>
+                        <Divider horizontal></Divider>
+                        <button class="small ui button">
+                          LOGIN
+                        </button>
+                        <Divider horizontal>OR</Divider>
+                        <Segment>
+                        <Segment basic textAlign={"center"}>
+                            <p>Don't have an account?</p>
+                            <Button style={{textAlign: "center"}}>SIGN UP</Button>
+                        </Segment>
+                    </Segment>
+                    </div>
+                </form>
+                        </p>
+                    </Modal.Description>
+                </Modal.Content>
+        </Modal>
+        </a>
+    </div>
+    </div>
+</div>
 
       </div>
+
       <div>
         <img style={{ float: 'left', width: '60%' }} src="https://equalrightscenter.org/wp-content/uploads/house-icon-1.png"></img>
         <div style={{ float: 'left' }}>
