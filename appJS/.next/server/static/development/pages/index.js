@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1768,10 +1768,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/footage.js":
-/*!**************************!*\
-  !*** ./pages/footage.js ***!
-  \**************************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1781,18 +1781,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/footage.js";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-function Footage() {
+
+function Home() {
+  const {
+    0: temperature,
+    1: setTemperature
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const {
+    0: forecast,
+    1: setForecast
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  axios__WEBPACK_IMPORTED_MODULE_2___default()({
+    "method": "GET",
+    "url": "https://weatherbit-v1-mashape.p.rapidapi.com/current",
+    "headers": {
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+      "x-rapidapi-key": "830f214fe3msh7fa9a15365fbc2bp14cb63jsn2a8b9cccfc0b"
+    },
+    "params": {
+      "units": "I",
+      "lang": "undefined",
+      "lon": "-75.165222",
+      "lat": "39.9526"
+    }
+  }).then(responseGet => {
+    setTemperature(responseGet.data.data[0].temp);
+    setForecast(responseGet.data.data[0].weather.description);
+  });
+  var d = new Date();
+  var n = d.getHours();
+  var greeting = "";
+
+  if (n < 12) {
+    greeting = "Good morning";
+  } else if (n < 18) {
+    greeting = "Good afternoon";
+  } else {
+    greeting = "Good evening";
+  }
+
   return __jsx("div", {
+    style: {
+      paddingLeft: '8px'
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 10
+      lineNumber: 43,
+      columnNumber: 5
     }
   }, __jsx("link", {
     rel: "stylesheet",
@@ -1800,206 +1844,200 @@ function Footage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 5
+      lineNumber: 44,
+      columnNumber: 7
     }
   }), __jsx("h1", {
     class: "ui header",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 5
+      lineNumber: 45,
+      columnNumber: 7
     }
-  }, "Footage"), __jsx("div", {
+  }, "WelcomeIN"), __jsx("div", {
     class: "ui inverted menu",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 5
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/index",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 46,
       columnNumber: 7
     }
   }, __jsx("a", {
-    className: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 9
-    }
-  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/users",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 7
-    }
-  }, __jsx("a", {
-    className: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 9
-    }
-  }, "Authroized Individuals")), __jsx("a", {
-    className: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 7
-    }
-  }, "Notifications"), __jsx("a", {
     class: "active item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 7
-    }
-  }, "Footage")), __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 5
-    }
-  }, __jsx("div", {
-    class: "ui centered card",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31,
-      columnNumber: 7
-    }
-  }, __jsx("div", {
-    class: "content",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32,
-      columnNumber: 9
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/video",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 11
-    }
-  }, __jsx("div", {
-    class: "header",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 13
-    }
-  }, "Video")), __jsx("div", {
-    class: "meta",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 11
-    }
-  }, "Last Activity: Today"), __jsx("div", {
-    class: "description",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 11
-    }
-  }, __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 13
-    }
-  }, "View Video Footage recorded from the security cameras.")))), __jsx("div", {
-    class: "ui centered card",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 47,
-      columnNumber: 7
-    }
-  }, __jsx("div", {
-    class: "content",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48,
       columnNumber: 9
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/images",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 9
-    }
-  }, __jsx("div", {
-    class: "header",
+  }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/users",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 11
+    }
+  }, "Authorized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/settings",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 11
+    }
+  }, "Notification Settings            ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/footage",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 11
+    }
+  }, "Footage"))), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 7
+    }
+  }, __jsx("img", {
+    style: {
+      float: 'left',
+      width: '60%'
+    },
+    src: "https://equalrightscenter.org/wp-content/uploads/house-icon-1.png",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 9
+    }
+  }), __jsx("div", {
+    style: {
+      float: 'left'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 9
+    }
+  }, __jsx("h2", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 11
+    }
+  }, greeting, ", Charlie!"), __jsx("div", {
+    style: {
+      marginLeft: '40px'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 11
+    }
+  }, __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
       columnNumber: 13
-    }
-  }, "Images")), __jsx("div", {
-    class: "meta",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 11
-    }
-  }, "Last Activity: 2 Days ago"), __jsx("div", {
-    class: "description",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 11
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 13
+      lineNumber: 72,
+      columnNumber: 15
     }
-  }, "view Headshots of Indiviuals who have entered the premeises via security cameras."))))));
+  }, "The forecast is ", forecast == null ? __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 56
+    }
+  }, "Loading...") : forecast, "."), __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 15
+    }
+  }, "The temperature is ", temperature == null ? __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 61
+    }
+  }, "Loading...") : temperature, " degrees."))))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Footage);
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+{}
+/* <Link href="/footage">
+<a>About Us</a>
+</Link> */
+// Page.getInitialProps = async ctx => {
+//   const res = await fetch('http://0.0.0.0:8007/footage/')
+//   console.log(res);
+//   return { img }
+// }
+// How to get video source from server 
+//<video> <source src= 'http://0.0.0.0:8007/footage/' autoplay type="video/mp4"></source></video>
 
 /***/ }),
 
-/***/ 8:
-/*!********************************!*\
-  !*** multi ./pages/footage.js ***!
-  \********************************/
+/***/ 7:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/footage.js */"./pages/footage.js");
+module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -2059,4 +2097,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=footage.js.map
+//# sourceMappingURL=index.js.map

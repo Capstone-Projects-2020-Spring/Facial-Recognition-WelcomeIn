@@ -49,7 +49,7 @@ function Home() {
         </a>
         <Link href="/users">
           <a className="item">
-            Authroized Individuals
+            Authorized Individuals
           </a>
         </Link>
         <Link href="/settings">

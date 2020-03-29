@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1802,24 +1802,33 @@ function images(props) {
     0: image,
     1: setImage
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const {
+    0: uploaded,
+    1: setUploaded
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
 
   const handleSubmit = evt => {
     evt.preventDefault();
     var formData = new FormData();
     formData.append("FileField", image);
     formData.append("Name", name);
-    axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("http://10.0.0.142:8007/friendlyfaces/", formData);
+    console.log(image);
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("http://10.0.0.142:8007/friendlyfaces/", formData).then(responsePost => axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("http://10.0.0.142:8007/friendlyfaces/").then(responseGet => setUploaded(responseGet.data[0].Image)));
   };
 
   const onChangeImage = e => {
     setImage(e.target.files[0]);
   };
 
+  const onChangeName = e => {
+    setName(e.target.value);
+  };
+
   return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, __jsx("link", {
@@ -1828,7 +1837,7 @@ function images(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 34,
       columnNumber: 13
     }
   }), __jsx("form", {
@@ -1837,41 +1846,40 @@ function images(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 35,
       columnNumber: 13
     }
   }, __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 36,
       columnNumber: 17
     }
   }, "Your Face:", __jsx("input", {
     type: "file",
-    value: image,
     onChange: onChangeImage,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 37,
       columnNumber: 17
     }
   })), __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 39,
       columnNumber: 17
     }
   }, "Your Name:", __jsx("input", {
     type: "text",
     value: name,
-    onChange: e => setName(e.target.value),
+    onChange: onChangeName,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 40,
       columnNumber: 17
     }
   })), __jsx("input", {
@@ -1880,7 +1888,15 @@ function images(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 42,
+      columnNumber: 17
+    }
+  }), __jsx("img", {
+    src: uploaded,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
       columnNumber: 17
     }
   })));
@@ -1890,7 +1906,7 @@ function images(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/images.js ***!
   \*******************************/
