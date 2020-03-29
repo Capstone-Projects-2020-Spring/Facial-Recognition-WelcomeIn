@@ -114,7 +114,11 @@ def VerifyAccess(request):
         
         result = face_recognition.compare_faces(KnownAccessList, enconded_attempted)
 
-<<<<<<< HEAD
+        if(True in result):
+            return HttpResponse("Access Granted")
+        else:
+            return HttpResponse("Access Denied")
+
 def UpdateProfile(request, user_id):
     user = User.objects.get(pk=user_id)
     user.profile.PhoneNumber = '123-456-7890'
@@ -132,9 +136,3 @@ def CreateUserView(request):
         form = UserForm()
         profile_form = ProfileForm()
     return render(request, 'registration/create_user.html', {'form': form, 'profile_form': profile_form})
-=======
-        if(True in result):
-            return HttpResponse("Access Granted")
-        else:
-            return HttpResponse("Access Denied")
->>>>>>> 38f7fae6a221a1e634af09cf370f6ccbb6f6cdc8
