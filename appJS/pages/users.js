@@ -5,7 +5,8 @@ import React from 'react'
 
 function Users() {
 
-    return <div>
+    return (<div style={{ paddingLeft: '8px' }}>
+    <div>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         
       <h1 class="ui header">Authorized Individuals</h1>
@@ -16,7 +17,7 @@ function Users() {
             </a>
         </Link>
     <a class="active item">
-      Authroized Individuals
+      Authorized Individuals
       </a>
       <Link href="/settings">
           <a className="item">
@@ -30,7 +31,7 @@ function Users() {
         </Link>
 
     </div>
-
+    </div>
     <div> 
         <Modal trigger = {
             <button class="medium ui button">
@@ -178,7 +179,7 @@ function Users() {
 
 
       </div>
-    </div>
+    </div>) 
   }
   
   export default Users
