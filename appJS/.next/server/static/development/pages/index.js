@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1781,7 +1781,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/index.js";
+var _jsxFileName = "/var/www/html/facial-recognition-application/sean.droke/appJS/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1843,20 +1843,12 @@ function Home() {
       lineNumber: 14,
       columnNumber: 11
     }
-  }, "Authroized Individuals")), __jsx("a", {
-    className: "item",
+  }, "Authroized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/settings",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 7
-    }
-  }, "Notifications"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/footage",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -1864,10 +1856,92 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 19,
       columnNumber: 11
     }
-  }, "Footage"))));
+  }, "Notification Settings            ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/footage",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    className: "item",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 11
+    }
+  }, "Footage"))), __jsx("div", {
+    class: "ui labeled button",
+    tabindex: "0",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 5
+    }
+  }, __jsx("div", {
+    class: "ui red button",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 3
+    }
+  }, __jsx("i", {
+    class: "heart icon",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 5
+    }
+  }), " Like"), __jsx("a", {
+    class: "ui basic red left pointing label",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 3
+    }
+  }, "1,048")), __jsx("div", {
+    class: "ui labeled button",
+    tabindex: "0",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 1
+    }
+  }, __jsx("div", {
+    class: "ui basic blue button",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 3
+    }
+  }, __jsx("i", {
+    class: "fork icon",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 5
+    }
+  }), " Forks"), __jsx("a", {
+    class: "ui basic left pointing blue label",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 3
+    }
+  }, "1,048")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -1885,14 +1959,14 @@ function Home() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/sean.droke/appJS/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
