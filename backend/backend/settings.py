@@ -125,7 +125,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+<<<<<<< HEAD
+#Redirect after logging in
+LOGIN_REDIRECT_URL = '/admin'
+=======
 CORS_ORIGIN_ALLOW_ALL = True
 
 FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o777
 FILE_UPLOAD_PERMISSIONS = 0o777
+>>>>>>> 38f7fae6a221a1e634af09cf370f6ccbb6f6cdc8

@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import FootageHandler, FriendlyFacesHandler, Profile, AlertHandler
 
-# Register your models here.
+admin.site.register(FootageHandler)
+admin.site.register(FriendlyFacesHandler)
+admin.site.register(Profile)
+admin.site.register(AlertHandler)

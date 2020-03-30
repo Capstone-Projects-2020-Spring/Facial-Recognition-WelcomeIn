@@ -1,11 +1,21 @@
 from django.http import HttpResponse, FileResponse
 from django.core.files import File
+<<<<<<< HEAD
+from django.shortcuts import render
+from .models import FootageHandler, FriendlyFacesHandler
+from .forms import UserForm, ProfileForm
+from django.views.decorators.csrf import csrf_exempt
+import os
+from django.contrib.auth.models import User
+from rest_framework.response import Response
+=======
 from .models import FootageHandler, FriendlyFacesHandler, AccessHistoryHandler
 from django.views.decorators.csrf import csrf_exempt
 import os
 import json
 import face_recognition
 import numpy as np
+>>>>>>> 38f7fae6a221a1e634af09cf370f6ccbb6f6cdc8
 
 @csrf_exempt
 def FootageHandlerFormView(request):
@@ -108,3 +118,21 @@ def VerifyAccess(request):
             return HttpResponse("Access Granted")
         else:
             return HttpResponse("Access Denied")
+
+def UpdateProfile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.PhoneNumber = '123-456-7890'
+    user.save()
+
+def CreateUserView(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        profile_form = ProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+        if profile_form.is_valid():
+                profile_form.save()
+    else:
+        form = UserForm()
+        profile_form = ProfileForm()
+    return render(request, 'registration/create_user.html', {'form': form, 'profile_form': profile_form})
