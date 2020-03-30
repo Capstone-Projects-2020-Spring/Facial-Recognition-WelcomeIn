@@ -8,6 +8,8 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     PhoneNumber = models.CharField(max_length=50, blank=True)
+    GetStrangerAlerts = models.BooleanField(default=False)
+    GetFriendlyAlerts = models.BooleanField(default=False)
 
 
 @receiver(post_save, sender=User)
@@ -27,6 +29,7 @@ class FootageHandler(models.Model):
 class FriendlyFacesHandler(models.Model):
     FileField = models.FileField(upload_to='FriendlyFaces/')
     Name = models.CharField(max_length=100, blank=True)
+    AutoUnlock = models.BooleanField(default=False)
 
 class AlertHandler(models.Model):
     Message = models.CharField(max_length=100)

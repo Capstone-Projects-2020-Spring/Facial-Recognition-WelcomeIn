@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
     path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView'),
-    path('create_user/', views.CreateUserView)
+    path('create_user/', views.CreateUserView),
     path('VerifyAccess/', views.VerifyAccess, name="VerifyAccess")
 ]

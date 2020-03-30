@@ -7,7 +7,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('footage', '0004_friendlyfaceshandler'),
-        ('footage', '0003_auto_20200322_2043'),
     ]
 
     operations = [

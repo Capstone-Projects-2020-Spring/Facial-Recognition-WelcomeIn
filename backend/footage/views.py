@@ -1,21 +1,15 @@
 from django.http import HttpResponse, FileResponse
 from django.core.files import File
-<<<<<<< HEAD
 from django.shortcuts import render
-from .models import FootageHandler, FriendlyFacesHandler
+from .models import FootageHandler, FriendlyFacesHandler, AccessHistoryHandler
 from .forms import UserForm, ProfileForm
 from django.views.decorators.csrf import csrf_exempt
 import os
 from django.contrib.auth.models import User
 from rest_framework.response import Response
-=======
-from .models import FootageHandler, FriendlyFacesHandler, AccessHistoryHandler
-from django.views.decorators.csrf import csrf_exempt
-import os
 import json
 import face_recognition
 import numpy as np
->>>>>>> 38f7fae6a221a1e634af09cf370f6ccbb6f6cdc8
 
 @csrf_exempt
 def FootageHandlerFormView(request):
