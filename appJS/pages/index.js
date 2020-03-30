@@ -52,13 +52,13 @@ function Home() {
             Authorized Individuals
           </a>
         </Link>
-        <Link href="/settings">
-          <a className="item">
-            Notification Settings            </a>
-        </Link>
         <Link href="/footage">
           <a className="item">
-            Footage
+            Footage            </a>
+        </Link>
+        <Link href="/settings">
+          <a className="item">
+            Settings
       </a>
         </Link>
 

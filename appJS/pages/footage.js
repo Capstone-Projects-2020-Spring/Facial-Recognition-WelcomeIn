@@ -3,7 +3,10 @@ import React from 'react'
 
 function Footage() {
 
-  return <div>
+  return (
+  
+    <div style={{ paddingLeft: '8px' }}>
+  <div>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
     <h1 class="ui header">Footage</h1>
@@ -18,46 +21,48 @@ function Footage() {
           Authroized Individuals
             </a>
       </Link>
-      <a className="item">
-        Notifications
-      </a>
-      <a class="active item">
+      <Link href="/footage" >
+      <a className="active item">
         Footage
       </a>
+      </Link>
+     <Link href="/settings">
+     <a class="item">
+        Settings
+      </a>
+     </Link>
+      
     </div>
+    <div style={{ paddingTop: '16px' }} class="ui center aligned grid">
+          <h2 class="ui icon header">
+            <Link href="/photos"><i class="camera icon"></i></Link>
+            <div class="content">
+              Photos
+    <div class="sub header">View a Log of Photos for every Entry to your Home.</div>
+            </div>
+          </h2>
+        </div>
+
+        <div class="ui divider"></div>
+        <div style={{ paddingTop: '16px' }} class="ui center aligned grid">
+          <h2 class="ui icon header">
+            <Link href="/video"><i class="film icon"></i></Link>
+            <div class="content">
+              Videos
+    <div class="sub header">View a dashboard of all recordings detected by the System.</div>
+            </div>
+          </h2>
+        </div>
+
+        <div class="ui divider"></div>
+
+   
     <div>
-
-
-      <div class="ui centered card">
-        <div class="content">
-
-
-          <Link href="/video">
-            <div class="header">Video</div>
-          </Link>
-          <div class="meta">Last Activity: Today</div>
-          <div class="description">
-            <p>View Video Footage recorded from the security cameras.</p>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="ui centered card">
-        <div class="content">
-        <Link href="/images">
-            <div class="header">Images</div>
-          </Link>
-          <div class="meta">Last Activity: 2 Days ago</div>
-          <div class="description">
-            <p>view Headshots of Indiviuals who have entered the premeises via security cameras.</p>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
+  </div>
+  )
 }
 
 export default Footage
