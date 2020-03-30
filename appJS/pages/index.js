@@ -44,7 +44,7 @@ function Home() {
     <div style={{ paddingLeft: '8px' }}>
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
       <h1 class="ui header">WelcomeIN</h1>
-      
+
       <div class="ui inverted menu">
         <a class="active item">
           Home
@@ -66,9 +66,11 @@ function Home() {
     <div class="ui container">
     <div class=" ui clearing segment">
     <div>
-      <a className="item" style={{textAlign: "right"}}>
+      <a className="item">
         <Modal trigger = {
-          <Button style={{textAlign: "right"}}>Login</Button>
+          <button class="small ui button">
+            Login
+          </button>
         }>
             <Modal.Header>WelcomeIN</Modal.Header>
             <Modal.Content>
@@ -92,14 +94,48 @@ function Home() {
                         <Segment>
                         <Segment basic textAlign={"center"}>
                             <p>Don't have an account?</p>
-                            <Button style={{textAlign: "center"}}>SIGN UP</Button>
-                        </Segment>
+                            <Modal trigger = {
+                              <Button type="button" style={{textAlign: "center"}}>SIGN UP</Button>
+                            }>
+                          <Modal.Header>WelcomeIN</Modal.Header>
+                          <Modal.Content>
+                            <Modal.Description>
+                                <Header>Sign Up</Header>
+                                <p>
+                                <form className="ui form">
+                                <div className="field">
+                                <label>First Name</label>
+                                <input name="FName" type="text" placeholder="John">
+                                </input>
+                                <Divider horizontal></Divider>
+                                <label>Last Name</label>
+                                <input name="LName" type="text" placeholder="Doe">
+                                </input>
+                                <Divider horizontal></Divider>
+                                <label>Email</label>
+                                <input name="email" type="text" placeholder="example@gmail.com">
+                                </input>
+                                <Divider horizontal></Divider>
+                                <label>Password</label>
+                                <input name="password" type="text" placeholder="Password...">
+                                </input>
+                                <Divider horizontal></Divider>
+                                <button class="small ui button">
+                                  SIGN UP
+                                </button>
+                                </div>
+                                </form>
+                                </p>
+                            </Modal.Description>
+                        </Modal.Content>
+                        </Modal>
+                      </Segment>
                     </Segment>
                     </div>
-                </form>
+                    </form>
                         </p>
-                    </Modal.Description>
-                </Modal.Content>
+                </Modal.Description>
+            </Modal.Content>
         </Modal>
         </a>
     </div>
