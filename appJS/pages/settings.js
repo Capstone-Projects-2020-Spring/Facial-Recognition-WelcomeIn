@@ -17,13 +17,13 @@ function settings() {
               Authorized Individuals
           </a>
           </Link>
-          <Link href="/settings">
-            <a className="active item">
-              Notification Settings</a>
-          </Link>
           <Link href="/footage">
+            <a className="active item">
+              Footage</a>
+          </Link>
+          <Link href="/settings">
             <a className="item">
-              Footage
+              Settings
           </a>
           </Link>
 
