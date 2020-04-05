@@ -1,4 +1,4 @@
-import { Button } from 'semantic-ui-react'
+import { Button, Header, Image } from 'semantic-ui-react'
 import React, { useState } from "react";
 import Link from 'next/link'
 import axios from "axios"
@@ -30,15 +30,41 @@ function images(props) {
 
     return (
 
-        <div>
+        <div >
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+        <h1 class="ui header"> WelcomeIN</h1>
+        <div class="ui inverted menu">
+        <Link href="/index">
+          <a class="item">
+            Home
+          </a>
+          </Link>
+          <Link href="/users">
+            <a className="item">
+              Authorized Individuals
+          </a>
+          </Link>
+          <Link href="/footage">
+            <a className="item">
+              Footage</a>
+          </Link>
+          <Link href="/settings">
+            <a className="item">
+              Settings
+          </a>
+          </Link>
+        </div>
+        
+        <h2 align="center">Upload A Photo of an Authorized Individual</h2>
+
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-            <form className="ui form" onSubmit={handleSubmit}>
-                <label>Your Face:
+            <form className="ui form segment" onSubmit={handleSubmit}>
+                <label><h3>Your Face:</h3></label>
                 <input type="file" onChange={onChangeImage} />
-                </label>
-                <label>Your Name:
+                <p></p>
+                <label><h3>Your Name:</h3></label>
                 <input type="text" value={name} onChange={onChangeName} />
-                </label>
+                <p></p>
                 <input type="submit" value="Submit" />
                 <img src={uploaded} />
             </form>

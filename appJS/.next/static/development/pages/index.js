@@ -55232,31 +55232,36 @@ function Home() {
       forecast = _useState2[0],
       setForecast = _useState2[1];
 
-  axios__WEBPACK_IMPORTED_MODULE_3___default()({
-    "method": "GET",
-    "url": "https://weatherbit-v1-mashape.p.rapidapi.com/current",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-      "x-rapidapi-key": "830f214fe3msh7fa9a15365fbc2bp14cb63jsn2a8b9cccfc0b"
-    },
-    "params": {
-      "units": "I",
-      "lang": "undefined",
-      "lon": "-75.165222",
-      "lat": "39.9526"
-    }
-  }).then(function (responseGet) {
-    setTemperature(responseGet.data.data[0].temp);
-    setForecast(responseGet.data.data[0].weather.description);
-  });
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
+      pic = _useState3[0],
+      setPic = _useState3[1];
+
   var d = new Date();
+  var phillyWoeId = 2471217;
+  var month = d.getMonth() + 1;
+  var day = d.getDate();
+  var year = d.getFullYear();
+  var endURL = "" + phillyWoeId + "/" + year + "/" + month + "/" + day + "/";
+  axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://www.metaweather.com/api/location/" + endURL).then(function (responseGet) {
+    console.log(responseGet);
+    var temp = responseGet.data[36].the_temp * (9.0 / 5) + 32.0;
+    setTemperature(temp.toFixed(1));
+    setForecast(responseGet.data[36].weather_state_name.toLowerCase());
+
+    if (responseGet.data[36].weather_state_name.toLowerCase().includes("cloud")) {
+      setPic("https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91789275_3796902540350047_445788270698168320_n.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=gP6FPoLPhYoAX9GMdnG&_nc_ht=scontent-iad3-1.xx&oh=b2ce54fbd3be5efa69bb47af18069ba2&oe=5EA7C05C");
+    } else if (responseGet.data[36].weather_state_name.toLowerCase().includes("rain") || responseGet.data[36].weather_state_name.toLowerCase().includes("shower")) {
+      setPic("https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91805606_3796902543683380_8138526403839655936_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=Yh7RICCEdUMAX-U9dUz&_nc_ht=scontent-iad3-1.xx&oh=b846e7f91baf2542ffa275f29a974d35&oe=5EA703D2");
+    } else if (responseGet.data[36].weather_state_name.toLowerCase().includes("clear")) {
+      setPic("https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91473012_3796902630350038_6098355064940789760_n.jpg?_nc_cat=100&_nc_sid=8024bb&_nc_ohc=Wj8z1CBeJqgAX8NHVHG&_nc_ht=scontent-iad3-1.xx&oh=d01e337cbbb5bb02b7e6e2041d6c2568&oe=5EA74F93");
+    }
+  });
   var n = d.getHours();
   var greeting = "";
 
   if (n < 12) {
     greeting = "Good morning";
-  } else if (n < 18) {
+  } else if (n < 17) {
     greeting = "Good afternoon";
   } else {
     greeting = "Good evening";
@@ -55269,7 +55274,7 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 47,
       columnNumber: 5
     }
   }, __jsx("link", {
@@ -55278,169 +55283,263 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 48,
       columnNumber: 7
     }
-  }), __jsx("h1", {
+  }), __jsx("div", {
+    "class": " ui clearing segment",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 11
+    }
+  }, __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 13
+    }
+  }, __jsx("h1", {
     "class": "ui header",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 7
+      lineNumber: 52,
+      columnNumber: 13
     }
   }, "WelcomeIN"), __jsx("div", {
     "class": "ui inverted menu",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 7
+      lineNumber: 55,
+      columnNumber: 17
     }
   }, __jsx("a", {
     "class": "active item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 9
+      lineNumber: 56,
+      columnNumber: 13
     }
   }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/users",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 9
+      lineNumber: 59,
+      columnNumber: 13
     }
   }, __jsx("a", {
     className: "item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 11
+      lineNumber: 60,
+      columnNumber: 15
     }
   }, "Authorized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/settings",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 9
+      lineNumber: 64,
+      columnNumber: 13
     }
   }, __jsx("a", {
     className: "item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 11
+      lineNumber: 65,
+      columnNumber: 15
     }
   }, "Notification Settings            ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/footage",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 9
-    }
-  }, __jsx("a", {
-    className: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 11
-    }
-  }, "Footage")), __jsx("div", {
-    "class": "ui container",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 9
-    }
-  }, __jsx("div", {
-    "class": " ui clearing segment",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 5
-    }
-  }, __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67,
-      columnNumber: 5
-    }
-  }, __jsx("a", {
-    className: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 68,
-      columnNumber: 7
+      columnNumber: 13
     }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
-    trigger: __jsx("button", {
-      "class": "small ui button",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70,
-        columnNumber: 11
-      }
-    }, "Login"),
+  }, __jsx("a", {
+    className: "item",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 69,
-      columnNumber: 9
+      columnNumber: 15
     }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
+  }, "Footage"))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 74,
-      columnNumber: 13
+      columnNumber: 11
     }
-  }, "WelcomeIN"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Content, {
+  }, __jsx("img", {
+    style: {
+      "float": 'left',
+      width: '60%'
+    },
+    src: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91440986_3796902550350046_4463254156290818048_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=XSUfZwvhiRsAX-1dZ-l&_nc_ht=scontent-iad3-1.xx&oh=b00b74cf690c9c82040bdb4da31fe637&oe=5EA7AFB7",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 75,
       columnNumber: 13
     }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Description, {
+  }), __jsx("div", {
+    style: {
+      "float": 'left'
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 76,
+      columnNumber: 13
+    }
+  }, __jsx("img", {
+    style: {
+      width: '60%'
+    },
+    src: pic,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 15
+    }
+  }), __jsx("div", {
+    style: {
+      marginLeft: '40px'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 15
+    }
+  }, __jsx("h2", {
+    style: {
+      paddingTop: '16px'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 17
+    }
+  }, greeting, ", Shakthi!"), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80,
+      columnNumber: 17
+    }
+  }, __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 19
+    }
+  }, "The forecast is ", forecast == null ? __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 60
+    }
+  }, "Loading...") : forecast, "."), __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82,
+      columnNumber: 19
+    }
+  }, "The temperature is ", temperature == null ? __jsx("em", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82,
+      columnNumber: 66
+    }
+  }, "Loading...") : temperature, " \xB0F.")))))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
+    trigger: __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89,
+        columnNumber: 19
+      }
+    }, __jsx("button", {
+      "class": "ui right floated large button ",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90,
+        columnNumber: 19
+      }
+    }, "Login"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
+      horizontal: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93,
+        columnNumber: 19
+      }
+    })),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88,
+      columnNumber: 17
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96,
+      columnNumber: 19
+    }
+  }, "WelcomeIN"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Content, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97,
+      columnNumber: 19
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Description, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98,
       columnNumber: 21
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Header"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
-      columnNumber: 25
+      lineNumber: 99,
+      columnNumber: 23
     }
   }, "Log In"), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 25
+      lineNumber: 100,
+      columnNumber: 23
     }
   }, __jsx("form", {
     className: "ui form",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 101,
       columnNumber: 25
     }
   }, __jsx("div", {
@@ -55448,15 +55547,15 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
-      columnNumber: 25
+      lineNumber: 102,
+      columnNumber: 27
     }
   }, __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 25
+      lineNumber: 103,
+      columnNumber: 29
     }
   }, "Email"), __jsx("input", {
     name: "email",
@@ -55465,23 +55564,23 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 25
+      lineNumber: 104,
+      columnNumber: 29
     }
   }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
     horizontal: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
-      columnNumber: 25
+      lineNumber: 106,
+      columnNumber: 29
     }
   }), __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 25
+      lineNumber: 107,
+      columnNumber: 29
     }
   }, "Password"), __jsx("input", {
     name: "password",
@@ -55490,39 +55589,39 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 25
+      lineNumber: 108,
+      columnNumber: 29
     }
   }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
     horizontal: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 25
+      lineNumber: 110,
+      columnNumber: 29
     }
   }), __jsx("button", {
     "class": "small ui button",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
-      columnNumber: 25
+      lineNumber: 111,
+      columnNumber: 29
     }
   }, "LOGIN"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
     horizontal: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 25
+      lineNumber: 114,
+      columnNumber: 29
     }
   }, "OR"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Segment"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
-      columnNumber: 25
+      lineNumber: 115,
+      columnNumber: 29
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Segment"], {
     basic: true,
@@ -55530,15 +55629,15 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
-      columnNumber: 25
+      lineNumber: 116,
+      columnNumber: 31
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 29
+      lineNumber: 117,
+      columnNumber: 33
     }
   }, "Don't have an account?"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
     trigger: __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -55549,257 +55648,258 @@ function Home() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97,
-        columnNumber: 31
+        lineNumber: 119,
+        columnNumber: 35
       }
     }, "SIGN UP"),
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 29
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99,
-      columnNumber: 27
-    }
-  }, "WelcomeIN"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Content, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100,
-      columnNumber: 27
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Description, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101,
-      columnNumber: 29
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Header"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102,
-      columnNumber: 33
-    }
-  }, "Sign Up"), __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103,
-      columnNumber: 33
-    }
-  }, __jsx("form", {
-    className: "ui form",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104,
-      columnNumber: 33
-    }
-  }, __jsx("div", {
-    className: "field",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105,
-      columnNumber: 33
-    }
-  }, __jsx("label", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106,
-      columnNumber: 33
-    }
-  }, "First Name"), __jsx("input", {
-    name: "FName",
-    type: "text",
-    placeholder: "John",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107,
-      columnNumber: 33
-    }
-  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
-    horizontal: true,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109,
-      columnNumber: 33
-    }
-  }), __jsx("label", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110,
-      columnNumber: 33
-    }
-  }, "Last Name"), __jsx("input", {
-    name: "LName",
-    type: "text",
-    placeholder: "Doe",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111,
-      columnNumber: 33
-    }
-  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
-    horizontal: true,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113,
-      columnNumber: 33
-    }
-  }), __jsx("label", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114,
-      columnNumber: 33
-    }
-  }, "Email"), __jsx("input", {
-    name: "email",
-    type: "text",
-    placeholder: "example@gmail.com",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115,
-      columnNumber: 33
-    }
-  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
-    horizontal: true,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117,
-      columnNumber: 33
-    }
-  }), __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 118,
       columnNumber: 33
     }
-  }, "Password"), __jsx("input", {
-    name: "password",
-    type: "text",
-    placeholder: "Password...",
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
-      columnNumber: 33
+      lineNumber: 121,
+      columnNumber: 35
+    }
+  }, "WelcomeIN"), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Content, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122,
+      columnNumber: 35
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Modal"].Description, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123,
+      columnNumber: 37
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Header"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124,
+      columnNumber: 39
+    }
+  }, "Sign Up"), __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125,
+      columnNumber: 39
+    }
+  }, __jsx("form", {
+    className: "ui form",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126,
+      columnNumber: 41
+    }
+  }, __jsx("div", {
+    className: "field",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 43
+    }
+  }, __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 45
+    }
+  }, "First Name:"), __jsx("input", {
+    name: "FName",
+    type: "text",
+    placeholder: "John",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129,
+      columnNumber: 45
     }
   }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
     horizontal: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
-      columnNumber: 33
+      lineNumber: 131,
+      columnNumber: 45
+    }
+  }), __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 45
+    }
+  }, "Last Name:"), __jsx("input", {
+    name: "LName",
+    type: "text",
+    placeholder: "Doe",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 45
+    }
+  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
+    horizontal: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135,
+      columnNumber: 45
+    }
+  }), __jsx("div", {
+    "class": "ui form",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136,
+      columnNumber: 45
+    }
+  }, __jsx("div", {
+    "class": "inline fields",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 137,
+      columnNumber: 47
+    }
+  }, __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 138,
+      columnNumber: 49
+    }
+  }, "Phone Number:"), __jsx("div", {
+    "class": "field",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139,
+      columnNumber: 49
+    }
+  }, __jsx("input", {
+    type: "text",
+    placeholder: "(xxx)",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140,
+      columnNumber: 51
+    }
+  })), __jsx("div", {
+    "class": "field",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143,
+      columnNumber: 49
+    }
+  }, __jsx("input", {
+    type: "text",
+    placeholder: "xxx",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144,
+      columnNumber: 51
+    }
+  })), __jsx("div", {
+    "class": "field",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147,
+      columnNumber: 49
+    }
+  }, __jsx("input", {
+    type: "text",
+    placeholder: "xxxx",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148,
+      columnNumber: 51
+    }
+  })))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
+    horizontal: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153,
+      columnNumber: 45
+    }
+  }), __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154,
+      columnNumber: 45
+    }
+  }, "Email:"), __jsx("input", {
+    name: "email",
+    type: "text",
+    placeholder: "example@gmail.com",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 45
+    }
+  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
+    horizontal: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 157,
+      columnNumber: 45
+    }
+  }), __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 158,
+      columnNumber: 45
+    }
+  }, "Password:"), __jsx("input", {
+    name: "password",
+    type: "text",
+    placeholder: "Password...",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 159,
+      columnNumber: 45
+    }
+  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Divider"], {
+    horizontal: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 161,
+      columnNumber: 45
     }
   }), __jsx("button", {
     "class": "small ui button",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
-      columnNumber: 33
+      lineNumber: 162,
+      columnNumber: 45
     }
-  }, "SIGN UP")))))))))))))))))))), __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145,
-      columnNumber: 7
-    }
-  }, __jsx("img", {
-    style: {
-      "float": 'left',
-      width: '60%'
-    },
-    src: "https://equalrightscenter.org/wp-content/uploads/house-icon-1.png",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 146,
-      columnNumber: 9
-    }
-  }), __jsx("div", {
-    style: {
-      "float": 'left'
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 147,
-      columnNumber: 9
-    }
-  }, __jsx("h2", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148,
-      columnNumber: 11
-    }
-  }, greeting, ", Charlie!"), __jsx("div", {
-    style: {
-      marginLeft: '40px'
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 149,
-      columnNumber: 11
-    }
-  }, __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 150,
-      columnNumber: 13
-    }
-  }, __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 151,
-      columnNumber: 15
-    }
-  }, "The forecast is ", forecast == null ? __jsx("em", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 151,
-      columnNumber: 56
-    }
-  }, "Loading...") : forecast, "."), __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152,
-      columnNumber: 15
-    }
-  }, "The temperature is ", temperature == null ? __jsx("em", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152,
-      columnNumber: 61
-    }
-  }, "Loading...") : temperature, " degrees."))))));
+  }, "SIGN UP")))))))))))))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
