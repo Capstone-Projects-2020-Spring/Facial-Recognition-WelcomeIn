@@ -20,7 +20,7 @@ server = SSHTunnelForwarder(
 
 server.start()
 
-URL = "http://127.0.0.1:8007/footage/"
+URL = "http://127.0.0.1:8007/VerifyAccess/"
 
 location = "Sean's House"
 

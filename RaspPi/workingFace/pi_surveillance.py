@@ -18,6 +18,9 @@ import os
 import subprocess
 import os.path
 import shlex
+from sshtunnel import SSHTunnelForwarder
+import requests
+import wget
 
 args = {
     "show_video": True,
@@ -131,15 +134,12 @@ for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True
                 camera.annotate_text = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 camera.start_recording(tName)
                 #camera.start_preview()
-                sleep(15)
+                sleep(5)
                 #camera.stop_preview()
                 camera.stop_recording()
-                #os.system('python videoFaceDetection.py {0}'.format(tName))
+                os.system('python3 videoFaceDetection.py {0}'.format(tName))
                 
-                command = shlex.split("python videoFaceDetection.py {0}".format(tName))
-                output = subprocess.check_output(command, stderr=subprocess.STDOUT)
-                print(output)
-                
+              
                 
                 
                 '''
