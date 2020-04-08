@@ -14,6 +14,10 @@ import json
 import time
 from time import sleep
 import cv2
+import os
+import subprocess
+import os.path
+import shlex
 
 args = {
     "show_video": True,
@@ -124,11 +128,20 @@ for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True
             # high enough
             if motionCounter >= conf["min_motion_frames"]:
                 tName = time.strftime("%Y%m%d-%H%M%S.h264")
+                camera.annotate_text = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 camera.start_recording(tName)
                 #camera.start_preview()
                 sleep(15)
                 #camera.stop_preview()
                 camera.stop_recording()
+                #os.system('python videoFaceDetection.py {0}'.format(tName))
+                
+                command = shlex.split("python videoFaceDetection.py {0}".format(tName))
+                output = subprocess.check_output(command, stderr=subprocess.STDOUT)
+                print(output)
+                
+                
+                
                 '''
                 t = TempImage()
                 img = cv2.imread(frame)

@@ -8,8 +8,8 @@ face_cascade = cv2.CascadeClassifier('Cascades/haarcascade_frontalface_default.x
 # To capture video from webcam. 
 #cap = cv2.VideoCapture(0)
 # To use a video file as input 
-#cap = cv2.VideoCapture(sys.argv[1])
-cap = cv2.VideoCapture('video.h264')
+cap = cv2.VideoCapture(sys.argv[1])
+#cap = cv2.VideoCapture('video.h264')
 
 print(cap)
 while True:
@@ -42,5 +42,6 @@ while True:
     else:
         break
 # Release the VideoCapture object
+print('Face detection finished')
 cap.release()
 cv2.destroyAllWindows()
