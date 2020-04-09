@@ -8,7 +8,7 @@ import wget
 
 
 remote_user = 'sean.droke'
-remote_host = '68.81.115.174'
+remote_host = '73.198.70.162'
 remote_port = 22
 local_host = '127.0.0.1'
 local_port = 8007
@@ -37,7 +37,7 @@ cap.set(4,480) # set Height
 
 while True:
     ret, img = cap.read()
-    img = cv2.flip(img, -1)
+    #img = cv2.flip(img, -1)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(
         gray,
@@ -52,8 +52,8 @@ while True:
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        if w > 150:
-            cv2.imwrite("testingBlueBox.png", img)
+        #if w > 100:
+            #cv2.imwrite("testingBlueBox.png", img)
     
             
 
@@ -68,7 +68,7 @@ while True:
 
     k = cv2.waitKey(30) & 0xff
     if k == 27: # press 'ESC' to quit
-        files = {'FileField': open('testingBlueBox.png', 'rb')}
+        #files = {'FileField': open('testingBlueBox.png', 'rb')}
         #r = requests.post(URL, data=data, files=files)
         break
 
