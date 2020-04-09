@@ -44,36 +44,54 @@ function Home() {
   }
 
   return (
-
     <div style={{ paddingLeft: '8px' }}>
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-      <h1 class="ui header">WelcomeIN</h1>
-      <div class="ui inverted menu">
-        <a class="active item">
-          Home
-        </a>
-        <Link href="/users">
-          <a className="item">
-            Authorized Individuals
-          </a>
-        </Link>
-        <Link href="/settings">
-          <a className="item">
-            Notification Settings            </a>
-        </Link>
-        <Link href="/footage">
-          <a className="item">
-            Footage
-      </a>
-        </Link>
-        <div class="ui container">
+
           <div class=" ui clearing segment">
             <div>
+            <h1 class="ui header">WelcomeIN</h1>
+
+
+                <div class="ui inverted menu">
+            <a class="active item">
+              Home
+            </a>
+            <Link href="/users">
               <a className="item">
+                Authorized Individuals
+              </a>
+            </Link>
+            <Link href="/settings">
+              <a className="item">
+                Notification Settings            </a>
+            </Link>
+            <Link href="/footage">
+              <a className="item">
+                Footage
+          </a>
+            </Link>
+          </div>
+          <div>
+            <img style={{ float: 'left', width: '60%' }} src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91440986_3796902550350046_4463254156290818048_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=XSUfZwvhiRsAX-1dZ-l&_nc_ht=scontent-iad3-1.xx&oh=b00b74cf690c9c82040bdb4da31fe637&oe=5EA7AFB7"></img>
+            <div style={{ float: 'left' }}>
+              <img style={{ width: '60%' }} src={pic}></img>
+              <div style={{ marginLeft: '40px' }}>
+                <h2 style={{ paddingTop: '16px' }}>{greeting}, Shakthi!</h2>
+                <div>
+                  <p>The forecast is {(forecast == null) ? <em>Loading...</em> : forecast}.</p>
+                  <p>The temperature is {(temperature == null) ? <em>Loading...</em> : temperature} °F.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
                 <Modal trigger={
-                  <button class="small ui button">
+                  <div>
+                  <button class="ui right floated large button ">
                     Login
-          </button>
+                  </button>
+                  <Divider horizontal></Divider>
+                  </div>
                 }>
                   <Modal.Header>WelcomeIN</Modal.Header>
                   <Modal.Content>
@@ -107,19 +125,37 @@ function Home() {
                                       <p>
                                         <form className="ui form">
                                           <div className="field">
-                                            <label>First Name</label>
+                                            <label>First Name:</label>
                                             <input name="FName" type="text" placeholder="John">
                                             </input>
                                             <Divider horizontal></Divider>
-                                            <label>Last Name</label>
+                                            <label>Last Name:</label>
                                             <input name="LName" type="text" placeholder="Doe">
                                             </input>
                                             <Divider horizontal></Divider>
-                                            <label>Email</label>
+                                            <div class="ui form">
+                                              <div class="inline fields">
+                                                <label>Phone Number:</label>
+                                                <div class="field">
+                                                  <input type="text" placeholder="(xxx)">
+                                                  </input>
+                                                </div>
+                                                <div class="field">
+                                                  <input type="text" placeholder="xxx">
+                                                  </input>
+                                                </div>
+                                                <div class="field">
+                                                  <input type="text" placeholder="xxxx">
+                                                  </input>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <Divider horizontal></Divider>
+                                            <label>Email:</label>
                                             <input name="email" type="text" placeholder="example@gmail.com">
                                             </input>
                                             <Divider horizontal></Divider>
-                                            <label>Password</label>
+                                            <label>Password:</label>
                                             <input name="password" type="text" placeholder="Password...">
                                             </input>
                                             <Divider horizontal></Divider>
@@ -140,26 +176,9 @@ function Home() {
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
-              </a>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <div>
-        <img style={{ float: 'left', width: '60%' }} src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/91440986_3796902550350046_4463254156290818048_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=XSUfZwvhiRsAX-1dZ-l&_nc_ht=scontent-iad3-1.xx&oh=b00b74cf690c9c82040bdb4da31fe637&oe=5EA7AFB7"></img>
-        <div style={{ float: 'left' }}>
-          <img style={{ width: '60%' }} src={pic}></img>
-          <div style={{ marginLeft: '40px' }}>
-            <h2 style={{ paddingTop: '16px' }}>{greeting}, Shakthi!</h2>
-            <div>
-              <p>The forecast is {(forecast == null) ? <em>Loading...</em> : forecast}.</p>
-              <p>The temperature is {(temperature == null) ? <em>Loading...</em> : temperature} °F.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+
   )
 
 }
@@ -170,6 +189,7 @@ export default Home
 {/* <Link href="/footage">
 <a>About Us</a>
 </Link> */}
+
 
 
 // Page.getInitialProps = async ctx => {
