@@ -74,7 +74,7 @@ while True:
     else:
         break
 # Release the VideoCapture object
-os.system('python3 testSSHface.py {0}'.format(picName))
+os.system('python3 testSSH_face.py {0}'.format(picName))
 print('Face detection finished')
 cap.release()
 
@@ -86,7 +86,7 @@ print('Conversion completed')
 
 videoFileName = "{0}.mp4".format(saveName)
 
-os.system('python3 testSSH.py {0}'.format(videoFileName))
+os.system('python3 testSSH_video.py {0}'.format(videoFileName))
 
 
 cv2.destroyAllWindows()
