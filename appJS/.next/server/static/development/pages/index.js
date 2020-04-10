@@ -1884,7 +1884,7 @@ function Home() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55,
-      columnNumber: 17
+      columnNumber: 13
     }
   }, __jsx("a", {
     class: "active item",
@@ -1911,7 +1911,7 @@ function Home() {
       columnNumber: 15
     }
   }, "Authorized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/settings",
+    href: "/footage",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1926,12 +1926,12 @@ function Home() {
       lineNumber: 65,
       columnNumber: 15
     }
-  }, "Notification Settings            ")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    href: "/footage",
+  }, "Footage")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "/settings",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, __jsx("a", {
@@ -1939,10 +1939,10 @@ function Home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 15
     }
-  }, "Footage"))), __jsx("div", {
+  }, "Settings            "))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,

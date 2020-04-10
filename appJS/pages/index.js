@@ -52,7 +52,7 @@ function Home() {
             <h1 class="ui header">WelcomeIN</h1>
 
 
-                <div class="ui inverted menu">
+            <div class="ui inverted menu">
             <a class="active item">
               Home
             </a>
@@ -61,14 +61,14 @@ function Home() {
                 Authorized Individuals
               </a>
             </Link>
-            <Link href="/settings">
-              <a className="item">
-                Notification Settings            </a>
-            </Link>
             <Link href="/footage">
               <a className="item">
                 Footage
           </a>
+            </Link>
+            <Link href="/settings">
+              <a className="item">
+                 Settings            </a>
             </Link>
           </div>
           <div>
