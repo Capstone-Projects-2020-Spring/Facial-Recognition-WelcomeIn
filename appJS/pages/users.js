@@ -1,31 +1,22 @@
 import Link from 'next/link'
 import { Grid, Image, Divider, Button, Header, Modal, Input, Form, GridColumn } from 'semantic-ui-react'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios"
 
 
 function Users() {
 
-    const [name, setName] = useState("");
-    const [list, setImage] = useState("");
+    
+    const [list, setArray] = useState([]);
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
 
-    axios.get("http://10.0.0.142:8007/friendlyfaces/", { timeout: 1000 }).then((responseGet) => setImage(responseGet.data));
-
+    useEffect(() => {
+        axios.get("http://10.0.0.142:8007/friendlyfaces/").then((responseGet) => setArray(responseGet.data));
+    }, []);
+    
     CancelToken: source.token;
 
-    var users = [];
-
-    //console.log(users.length);
-
-    for (let i = 0; i < list.length; i++) {
-        users.push(list[i])
-    }
-
-
-
-    //console.log(image)
 
     return (
 
@@ -94,69 +85,21 @@ function Users() {
             <div>
                 <Grid>
                     <Grid.Row columns={4}>
-                        {users.forEach(element => {
-                            console.log(element.Image);
-                            return (
-                                <GridColumn>
-                                    <Image
-                                        fluid
-                                        label={{
-                                            as: 'a',
-                                            color: 'black',
-                                            content: 'Name',
-                                            ribbon: true,
-                                        }}
-                                        src={element.Image} size='small' />
-                                </GridColumn>
-                            )
-                        })}
-                    </Grid.Row>
+                        
+                        {list.map(ele => (
+                            <Grid.Column>
+                                <Image
+                                    fluid
+                                    label={{
+                                        as: 'a',
+                                        color: 'black',
+                                        content: ele.Name,
+                                        ribbon: true,
+                                    }}
+                                    src={ele.Image} size='small' />
+                            </Grid.Column>
 
-                    <Grid.Row columns={4}>
-                        <Grid.Column>
-                            <Image
-                                fluid
-                                label={{
-                                    as: 'a',
-                                    color: 'black',
-                                    content: 'Megan',
-                                    ribbon: true,
-                                }}
-                                src='http://10.0.0.142/facial-recognition-application/sean.droke/FacialRecognitionRepo/backend/media/FriendlyFaces/meghan.PNG' size='small' />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Image
-                                fluid
-                                label={{
-                                    as: 'a',
-                                    color: 'black',
-                                    content: 'Sean',
-                                    ribbon: true,
-                                }}
-                                src='http://10.0.0.142/facial-recognition-application/sean.droke/FacialRecognitionRepo/backend/media/FriendlyFaces/Sean_Droke.PNG' size='small' />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Image
-                                fluid
-                                label={{
-                                    as: 'a',
-                                    color: 'black',
-                                    content: 'Maks',
-                                    ribbon: true,
-                                }}
-                                src='http://10.0.0.142/facial-recognition-application/sean.droke/FacialRecognitionRepo/backend/media/FriendlyFaces/Max_G.PNG' size='small' />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Image
-                                fluid
-                                label={{
-                                    as: 'a',
-                                    color: 'black',
-                                    content: 'Dani',
-                                    ribbon: true,
-                                }}
-                                src='http://10.0.0.142/facial-recognition-application/sean.droke/FacialRecognitionRepo/backend/media/FriendlyFaces/dani_cXVUGbP.PNG' size='small' />
-                        </Grid.Column>
+                        ))}
                     </Grid.Row>
                 </Grid>
 
@@ -165,7 +108,7 @@ function Users() {
             </div>
         </div>)
 
-    
+
 }
 
 
