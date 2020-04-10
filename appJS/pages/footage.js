@@ -6,10 +6,10 @@ function Footage() {
   return (
   
     <div style={{ paddingLeft: '8px' }}>
-  <div>
+  <div class=" ui clearing segment">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
-    <h1 class="ui header">Footage</h1>
+    <h1 class="ui header">WelcomeIN</h1>
     <div class="ui inverted menu">
       <Link href="/index">
         <a className="item">
