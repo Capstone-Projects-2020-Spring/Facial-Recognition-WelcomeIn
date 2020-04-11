@@ -1,19 +1,17 @@
-import React, { useState } from "react";
 import Link from 'next/link'
+import React from 'react'
+import { Grid, Image, Divider, Button, Header, Modal, Input, Form, Label } from 'semantic-ui-react'
 
-export default photos;
-
-function photos(props) {
-
-    return (
-
+function settings() {
+  return (
+    <div style={{ paddingLeft: '8px' }}>
       <div class=" ui clearing segment">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         <h1 class="ui header">WelcomeIN</h1>
         <div class="ui inverted menu">
         <Link href="/index">
-          <a class="item">
-            Home
+            <a className="item">
+              Home
           </a>
           </Link>
           <Link href="/users">
@@ -26,43 +24,86 @@ function photos(props) {
               Footage</a>
           </Link>
           <Link href="/settings">
-            <a className="item">
+            <a className="active item">
                Settings
           </a>
           </Link>
+
         </div>
-        
-        <h2 align="center">Photo Activity Logs</h2>
-        <div class= "ui container">
-        <div class="ui relaxed divided list">
-            <div class="item">
-                <i class="camera icon"></i>
-                <div class="content">
-                <a class = "header" href='https://mydreamsymbolism.com/wp-content/uploads/2019/06/Dreaming-of-Intruders-Meaning-and-Symbolism-700x400.jpg'>Photo 1</a>
-                <div class="description">4/10/20</div>
-                <div class="description">10 mins ago</div>
-                </div>
+        <div style={{ paddingTop: '16px' }} class="ui center aligned grid">
+          <h2 class="ui icon header">
+            <i class="settings icon"></i>
+            <div class="content">
+              Settings
+    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
             </div>
-            <div class="item">
-                <i class="camera icon"></i>
-                <div class="content">
-                <a class = "header" href='http://0.0.0.0:8007/footage/'>Photo 2</a>
-                <div class="description">4/10/20</div>
-                <div class="description">22 mins ago</div>
-                </div>
-            </div>
-            <div class="item">
-                <i class="camera icon"></i>
-                <div class="content">
-                <a class = "header" href='http://0.0.0.0:8007/footage/'>Photo 3</a>
-                <div class="description">4/10/20</div>
-                <div class="description">34 mins ago</div>
-                </div>
-            </div>
-            </div>
-            </div>
+          </h2>
         </div>
 
-    );
-}
-;
+        <div class="ui divider"></div>
+        <div class="sub header"> Notification Settings: </div>
+        <div style={{ paddingLeft: '40%' }} class="ui padded left aligned grid">
+
+          <div class="white row" >
+
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="public"></input>
+              <label>Receive Notifications if Strangers are detected.</label>
+
+            </div>
+          </div>
+
+          <div class="white row" >
+
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="public"></input>
+              <label>Receive Notifications if Authroized Individuals are detected.</label>
+
+            </div>
+          </div>
+
+          <div class="white row" >
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="public"></input>
+              <label>Receive Notifications via SMS</label>
+            </div>
+          </div>
+
+          <div class="white row" >
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="public"></input>
+              <label>Receive Notifications via E-Mail</label>
+            </div>
+          </div>
+
+        </div>
+
+        <button style={{ marginLeft: '90%' }} class="positive ui button">Save Changes</button>
+        <div class="ui divider"></div>
+        <div className="content">Current Account Settings: </div>
+        <div style={{ paddingLeft: '8px', paddingTop: '8px' }}>
+
+       
+        <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
+          <p>Name: Shakthi Panneer</p>
+        </div>
+        <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
+        <p>E-Mail: tug40828@temple.edu</p>
+        </div>
+        <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
+        <p>SMS Number: 267-475-6761</p>
+        </div>
+        <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
+        <p>Address: 15 Hartfeld Road</p>
+        </div>
+
+        <Link href="updateUserSettings"><button style={{ marginLeft: '90%' }} class="positive ui button">Update Information</button></Link>
+
+        
+        </div>
+      </div>
+    </div> //ending page
+  )
+
+
+} export default settings
