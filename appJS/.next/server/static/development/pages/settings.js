@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1783,7 +1783,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/settings.js";
+var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/settings.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -2095,119 +2095,7 @@ function settings() {
       lineNumber: 75,
       columnNumber: 15
     }
-  }, "Receive Notifications via E-Mail")))), __jsx("div", {
-    class: "ui divider",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 9
-    }
-  }), __jsx("div", {
-    className: "content",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 9
-    }
-  }, "User Settings: "), __jsx("div", {
-    style: {
-      marginLeft: '20px'
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83,
-      columnNumber: 9
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Form"], {
-    class: "ui form",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84,
-      columnNumber: 11
-    }
-  }, __jsx("div", {
-    style: {
-      marginRight: '50%',
-      paddingTop: '10px'
-    },
-    class: "field",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 13
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Label"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 15
-    }
-  }, "E-Mail"), __jsx("div", {
-    style: {
-      paddingTop: "10px"
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90,
-      columnNumber: 15
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "E-Mail",
-    placeholder: "E-Mail",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 17
-    }
-  }))), __jsx("div", {
-    style: {
-      marginRight: '50%',
-      paddingTop: '10px'
-    },
-    class: "field",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 13
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Label"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 15
-    }
-  }, "SMS Number"), __jsx("div", {
-    style: {
-      paddingTop: "10px"
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99,
-      columnNumber: 15
-    }
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "Phone Number",
-    placeholder: "Phone Number",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100,
-      columnNumber: 17
-    }
-  }))))), __jsx("button", {
+  }, "Receive Notifications via E-Mail")))), __jsx("button", {
     style: {
       marginLeft: '90%'
     },
@@ -2215,7 +2103,7 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, "Save Changes"), __jsx("div", {
@@ -2223,7 +2111,7 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 82,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -2231,7 +2119,7 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, "Current Account Settings: "), __jsx("div", {
@@ -2242,7 +2130,7 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 84,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2254,14 +2142,14 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 87,
       columnNumber: 9
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 88,
       columnNumber: 11
     }
   }, "Name: Shakthi Panneer")), __jsx("div", {
@@ -2273,14 +2161,14 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 90,
       columnNumber: 9
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 91,
       columnNumber: 9
     }
   }, "E-Mail: tug40828@temple.edu")), __jsx("div", {
@@ -2292,14 +2180,14 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 93,
       columnNumber: 9
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 94,
       columnNumber: 9
     }
   }, "SMS Number: 267-475-6761")), __jsx("div", {
@@ -2311,17 +2199,36 @@ function settings() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 96,
       columnNumber: 9
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 97,
       columnNumber: 9
     }
-  }, "Address: 15 Hartfeld Road"))))) //ending page
+  }, "Address: 15 Hartfeld Road")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    href: "updateUserSettings",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 9
+    }
+  }, __jsx("button", {
+    style: {
+      marginLeft: '90%'
+    },
+    class: "positive ui button",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 41
+    }
+  }, "Update Information"))))) //ending page
   ;
 }
 
@@ -2329,14 +2236,14 @@ function settings() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!*********************************!*\
   !*** multi ./pages/settings.js ***!
   \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/settings.js */"./pages/settings.js");
+module.exports = __webpack_require__(/*! /var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/settings.js */"./pages/settings.js");
 
 
 /***/ }),

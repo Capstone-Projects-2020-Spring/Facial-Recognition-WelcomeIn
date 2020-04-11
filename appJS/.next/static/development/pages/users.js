@@ -20782,10 +20782,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./":
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -55216,7 +55216,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/users.js";
+var _jsxFileName = "/var/www/html/facial-recognition-application/shakthi.panneer/Facial-Recognition-WelcomeIn/appJS/pages/users.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -55355,7 +55355,7 @@ function Users() {
     }
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
     trigger: __jsx(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
-      href: "/images",
+      href: "/manageIndividuals",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -55371,9 +55371,9 @@ function Users() {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 53,
-        columnNumber: 42
+        columnNumber: 53
       }
-    }, "Add Authroized Individual")),
+    }, "Manage Authorized Individuals")),
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -55553,14 +55553,14 @@ function Users() {
 
 /***/ }),
 
-/***/ 2:
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ 4:
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js ***!
+  \******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fkamelya.kalouche%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fusers&absolutePagePath=%2Fvar%2Fwww%2Fhtml%2Ffacial-recognition-application%2Fshakthi.panneer%2FFacial-Recognition-WelcomeIn%2FappJS%2Fpages%2Fusers.js!./");
 
 
 /***/ }),
@@ -55576,5 +55576,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=users.js.map
