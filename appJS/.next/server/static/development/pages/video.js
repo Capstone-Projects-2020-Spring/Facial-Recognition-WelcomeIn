@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1781,8 +1781,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/var/www/html/facial-recognition-application/kamelya.kalouche/Facial-Recognition-WelcomeIn/appJS/pages/video.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (video);
@@ -1793,7 +1796,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 7
     }
   }, __jsx("link", {
@@ -1802,7 +1805,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 9
     }
   }), __jsx("h1", {
@@ -1810,7 +1813,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 9
     }
   }, "WelcomeIN"), __jsx("div", {
@@ -1818,7 +1821,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 14,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1826,7 +1829,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 9
     }
   }, __jsx("a", {
@@ -1834,7 +1837,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 11
     }
   }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1842,7 +1845,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -1850,7 +1853,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, "Authorized Individuals")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1858,7 +1861,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -1866,7 +1869,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   }, "Footage")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1874,7 +1877,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -1882,7 +1885,7 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, "Settings"))), __jsx("h2", {
@@ -1890,173 +1893,270 @@ function video(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 9
-    }
-  }, "Video Activity Logs"), __jsx("div", {
-    class: "ui container",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 36,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    class: "ui relaxed divided list",
+  }, "Video Activity Logs"), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    class: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 13
-    }
-  }, __jsx("i", {
-    class: "film icon",
+  }, __jsx("table", {
+    class: "ui selectable celled table",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39,
-      columnNumber: 17
+      columnNumber: 9
     }
-  }), __jsx("div", {
-    class: "content",
+  }, __jsx("thead", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
-      columnNumber: 17
+      columnNumber: 9
     }
-  }, __jsx("a", {
-    class: "header",
-    href: "http://0.0.0.0:8007/footage/",
+  }, __jsx("tr", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41,
-      columnNumber: 19
+      columnNumber: 11
     }
-  }, "Video 1"), __jsx("div", {
-    class: "description",
+  }, __jsx("th", {
+    class: "",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42,
-      columnNumber: 19
+      columnNumber: 13
     }
-  }, "4/10/20"), __jsx("div", {
-    class: "description",
+  }, "Name"), __jsx("th", {
+    class: "",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43,
-      columnNumber: 17
-    }
-  }, "10 mins ago"))), __jsx("div", {
-    class: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
       columnNumber: 13
     }
-  }, __jsx("i", {
-    class: "film icon",
+  }, "Date"), __jsx("th", {
+    class: "",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 17
+      lineNumber: 44,
+      columnNumber: 13
     }
-  }), __jsx("div", {
-    class: "content",
+  }, "Time"), __jsx("th", {
+    class: "",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 13
+    }
+  }, "Footage"))), __jsx("tbody", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48,
-      columnNumber: 17
+      columnNumber: 9
     }
-  }, __jsx("a", {
-    class: "header",
-    href: "http://0.0.0.0:8007/footage/",
+  }, __jsx("tr", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49,
-      columnNumber: 17
+      columnNumber: 11
     }
-  }, "Video 2"), __jsx("div", {
-    class: "description",
+  }, __jsx("td", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50,
-      columnNumber: 17
+      columnNumber: 13
     }
-  }, "4/10/20"), __jsx("div", {
-    class: "description",
+  }, "Dani"), __jsx("td", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51,
-      columnNumber: 17
-    }
-  }, "22 mins ago"))), __jsx("div", {
-    class: "item",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
       columnNumber: 13
     }
-  }, __jsx("i", {
-    class: "film icon",
+  }, "4/11/20"), __jsx("td", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 17
+      lineNumber: 52,
+      columnNumber: 13
     }
-  }), __jsx("div", {
-    class: "content",
+  }, "12:00pm"), __jsx("td", {
+    class: "center aligned",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 17
+      lineNumber: 53,
+      columnNumber: 13
     }
-  }, __jsx("a", {
-    class: "header",
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    class: "ui grey button",
     href: "http://0.0.0.0:8007/footage/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 17
+      lineNumber: 54,
+      columnNumber: 15
     }
-  }, "Video 1"), __jsx("div", {
-    class: "description",
+  }, __jsx("video", {
+    width: "100",
+    height: "100",
+    controls: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 17
+      lineNumber: 55,
+      columnNumber: 15
     }
-  }, "4/10/20"), __jsx("div", {
-    class: "description",
+  }, " ", __jsx("source", {
+    src: "http://0.0.0.0:8007/footage/",
+    type: "video/mp4",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 59
+    }
+  }))))), __jsx("tr", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59,
-      columnNumber: 17
+      columnNumber: 11
     }
-  }, "34 mins ago"))))));
+  }, __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 13
+    }
+  }, "Dani"), __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 13
+    }
+  }, "4/10/20"), __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 13
+    }
+  }, "12:00pm"), __jsx("td", {
+    class: "center aligned",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 13
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    class: "ui grey button",
+    href: "http://0.0.0.0:8007/footage/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 15
+    }
+  }, __jsx("video", {
+    width: "100",
+    height: "100",
+    controls: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 15
+    }
+  }, " ", __jsx("source", {
+    src: "http://0.0.0.0:8007/footage/",
+    type: "video/mp4",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 59
+    }
+  }))))), __jsx("tr", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 11
+    }
+  }, __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 13
+    }
+  }, "Dani"), __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 13
+    }
+  }, "4/9/20"), __jsx("td", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 13
+    }
+  }, "12:00pm"), __jsx("td", {
+    class: "center aligned",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 13
+    }
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    class: "ui grey button",
+    href: "http://0.0.0.0:8007/footage/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 15
+    }
+  }, __jsx("video", {
+    width: "100",
+    height: "100",
+    controls: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 15
+    }
+  }, " ", __jsx("source", {
+    src: "http://0.0.0.0:8007/footage/",
+    type: "video/mp4",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 59
+    }
+  })))))))));
 }
 
 ;
@@ -2070,7 +2170,7 @@ function video(props) {
 
 /***/ }),
 
-/***/ 8:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/video.js ***!
   \******************************/
@@ -2123,6 +2223,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "semantic-ui-react":
+/*!************************************!*\
+  !*** external "semantic-ui-react" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("semantic-ui-react");
 
 /***/ }),
 

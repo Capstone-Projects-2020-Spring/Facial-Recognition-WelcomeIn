@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from 'next/link'
+import { Button, Table } from 'semantic-ui-react'
 
 export default video;
 
@@ -33,35 +34,52 @@ function video(props) {
         </div>
         
         <h2 align="center">Video Activity Logs</h2>
-        <div class= "ui container">
-        <div class="ui relaxed divided list">
-            <div class="item">
-                <i class="film icon"></i>
-                <div class="content">
-                  <a class = "header" href='http://0.0.0.0:8007/footage/'>Video 1</a>
-                  <div class="description">4/10/20</div>
-                <div class="description">10 mins ago</div>
-                </div>
-            </div>
-            <div class="item">
-                <i class="film icon"></i>
-                <div class="content">
-                <a class = "header" href='http://0.0.0.0:8007/footage/'>Video 2</a>
-                <div class="description">4/10/20</div>
-                <div class="description">22 mins ago</div>
-                </div>
-            </div>
-            <div class="item">
-                <i class="film icon"></i>
-                <div class="content">
-                <a class = "header" href='http://0.0.0.0:8007/footage/'>Video 1</a>
-                <div class="description">4/10/20</div>
-                <div class="description">34 mins ago</div>
-                </div>
-            </div>
-            </div>
-            </div>
-        </div>
+        <div>
+        
+        <table class="ui selectable celled table">
+        <thead>
+          <tr>
+            <th class="">Name</th>
+            <th class="">Date</th>
+            <th class="">Time</th>
+            <th class="">Footage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dani</td>
+            <td>4/11/20</td>
+            <td>12:00pm</td>
+            <td class="center aligned">
+              <Button class="ui grey button" href='http://0.0.0.0:8007/footage/'>
+              <video width="100" height="100" controls  > <source src= 'http://0.0.0.0:8007/footage/' type="video/mp4"></source></video>
+              </Button>
+            </td>
+          </tr>
+          <tr>
+            <td>Dani</td>
+            <td>4/10/20</td>
+            <td>12:00pm</td>
+            <td class="center aligned">
+              <Button class="ui grey button" href='http://0.0.0.0:8007/footage/'>
+              <video width="100" height="100" controls  > <source src= 'http://0.0.0.0:8007/footage/' type="video/mp4"></source></video>
+              </Button>
+            </td>
+          </tr>
+          <tr >
+            <td>Dani</td>
+            <td>4/9/20</td>
+            <td>12:00pm</td>
+            <td class="center aligned">
+              <Button class="ui grey button" href='http://0.0.0.0:8007/footage/'>
+              <video width="100" height="100" controls  > <source src= 'http://0.0.0.0:8007/footage/' type="video/mp4"></source></video>
+              </Button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
 
 
 
