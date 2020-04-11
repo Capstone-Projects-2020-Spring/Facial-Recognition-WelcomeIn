@@ -50,8 +50,8 @@ function Users() {
 
             <div>
                 <Modal trigger={
-                    <Link href="/images"><button style={{ marginTop: '16px' }} class="medium ui button">
-                        Add Authroized Individual
+                    <Link href="/manageIndividuals"><button style={{ marginTop: '16px' }} class="medium ui button">
+                        Manage Authorized Individuals
             </button>
                     </Link>
                 }>

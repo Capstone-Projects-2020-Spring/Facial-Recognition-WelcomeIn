@@ -78,31 +78,6 @@ function settings() {
 
         </div>
 
-        <div class="ui divider"></div>
-        <div className="content">User Settings: </div>
-        <div style={{ marginLeft: '20px' }}>
-          <Form class="ui form">
-
-            <div style={{ marginRight: '50%', paddingTop: '10px' }} class="field">
-              <Label>
-                E-Mail
-            </Label>
-              <div style={{ paddingTop: "10px" }}>
-                <Input type="text" name="E-Mail" placeholder="E-Mail"></Input>
-              </div>
-            </div>
-
-            <div style={{ marginRight: '50%', paddingTop: '10px' }} class="field">
-              <Label>
-                SMS Number
-            </Label>
-              <div style={{ paddingTop: "10px" }}>
-                <Input type="text" name="Phone Number" placeholder="Phone Number"></Input>
-              </div>
-            </div>
-
-          </Form>
-        </div>
         <button style={{ marginLeft: '90%' }} class="positive ui button">Save Changes</button>
         <div class="ui divider"></div>
         <div className="content">Current Account Settings: </div>
@@ -121,6 +96,8 @@ function settings() {
         <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
         <p>Address: 15 Hartfeld Road</p>
         </div>
+
+        <Link href="updateUserSettings"><button style={{ marginLeft: '90%' }} class="positive ui button">Update Information</button></Link>
 
         
         </div>
