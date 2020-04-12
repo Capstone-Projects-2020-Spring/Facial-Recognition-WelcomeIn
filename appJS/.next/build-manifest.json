@@ -20,11 +20,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/updateUserSettings": [
+    "/settings": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/users": [
+    "/updateUserSettings": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

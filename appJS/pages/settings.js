@@ -1,8 +1,23 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { Grid, Image, Divider, Button, Header, Modal, Input, Form, Label } from 'semantic-ui-react'
+import axios from "axios"
 
 function settings() {
+  
+  const [list, setArray] = useState([]);
+  const CancelToken = axios.CancelToken;
+  const source = CancelToken.source();
+
+  useEffect(() => {
+      axios.get("http://10.0.0.142:8007/userpersonalsettings/").then((responseGet) => setArray(responseGet.data));
+  }, []);
+
+  var name = list.name;
+  var email = list.email;
+  var sms = list.smsnumber;
+  var address = list.houseaddress;
+
   return (
     <div style={{ paddingLeft: '8px' }}>
       <div class=" ui clearing segment">
@@ -85,16 +100,16 @@ function settings() {
 
        
         <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
-          <p>Name: Shakthi Panneer</p>
+          <p>Name: {name}</p>
         </div>
         <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
-        <p>E-Mail: tug40828@temple.edu</p>
+        <p>E-Mail: {email}</p>
         </div>
         <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
-        <p>SMS Number: 267-475-6761</p>
+        <p>SMS Number: {sms}</p>
         </div>
         <div style={{ marginRight: '50%', paddingTop: '10px' }} class="ui segment">
-        <p>Address: 15 Hartfeld Road</p>
+        <p>Address: {address}</p>
         </div>
 
         <Link href="updateUserSettings"><button style={{ marginLeft: '90%' }} class="positive ui button">Update Information</button></Link>
