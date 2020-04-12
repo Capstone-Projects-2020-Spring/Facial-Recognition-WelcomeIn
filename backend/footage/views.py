@@ -10,6 +10,10 @@ from rest_framework.response import Response
 import json
 import face_recognition
 import numpy as np
+from django.core.mail import send_mail
+from backend.settings import EMAIL_HOST_USER
+from twilio.rest import Client
+from django.conf import settings  
 
 @csrf_exempt
 def FootageHandlerFormView(request):
@@ -108,9 +112,28 @@ def VerifyAccess(request):
         
         result = face_recognition.compare_faces(KnownAccessList, enconded_attempted)
 
+        
         if(True in result):
+            send_mail(
+                'Access Granted',
+                'A friendly face has opened the door.',
+                EMAIL_HOST_USER,
+                ['tug32883@temple.edu'],
+                fail_silently=False,
+            )
+            client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+            client.messages.create(to=4844794105, from_=settings.TWILIO_NUMBER, body="A friendly face has opened the door.")
             return HttpResponse("Access Granted")
         else:
+            send_mail(
+                'Access Denied',
+                'A stranger has tried to access the door.',
+                EMAIL_HOST_USER,
+                ['tug32883@temple.edu'],
+                fail_silently=False,
+            )
+            client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+            client.messages.create(to=4844794105, from_=settings.TWILIO_NUMBER, body="A stranger has tried to access the door.")
             return HttpResponse("Access Denied")
 
 def UpdateProfile(request, user_id):
