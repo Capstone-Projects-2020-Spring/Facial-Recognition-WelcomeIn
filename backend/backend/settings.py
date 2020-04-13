@@ -125,6 +125,21 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'welcomeingroup@gmail.com'
+EMAIL_HOST_PASSWORD = 'WelcomeIn1234'
+
+# Set Twilio settings if needed.
+# Note: `pip install twilio` to use the Twilio backend.
+TWILIO_MAGIC_FROM_NUMBER = "+15005550006"  # This number passes all validation.
+TWILIO_ACCOUNT_SID = "ACdb611701060f5bcdc15352232b5800da"
+TWILIO_AUTH_TOKEN = "b1b03b88aa046435e29dd929d087c2c8"
+TWILIO_NUMBER = "+12562554673"
+
 #Redirect after logging in
 LOGIN_REDIRECT_URL = '/admin'
 
