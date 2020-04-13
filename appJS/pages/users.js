@@ -17,6 +17,12 @@ function Users() {
     
     CancelToken: source.token;
 
+    const removeImage = (name) => {
+        var formData = new FormData();
+        formData.append("Name", name);
+        axios.delete("http://10.0.0.142:8007/friendlyfaces/", formData)
+    } 
+
 
     return (
         <div class=" ui clearing segment">
@@ -97,6 +103,7 @@ function Users() {
                                         ribbon: true,
                                     }}
                                     src={ele.Image} size='small' />
+                                <button onClick = {removeImage(ele.Name)} class="ui negative basic button">Delete</button>
                             </Grid.Column>
 
                         ))}
