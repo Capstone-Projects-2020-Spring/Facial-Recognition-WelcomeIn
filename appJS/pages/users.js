@@ -1,150 +1,122 @@
 import Link from 'next/link'
-import { Grid, Image } from 'semantic-ui-react'
-import React from 'react'
+import { Grid, Image, Divider, Button, Header, Modal, Input, Form, GridColumn } from 'semantic-ui-react'
+import React, { useState, useEffect } from "react";
+import axios from "axios"
 
 
 function Users() {
 
-    return <div>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-        
-      <h1 class="ui header">Authorized Individuals</h1>
-      <div class="ui inverted menu">
-      <Link href="/index">
-          <a className="item">
-          Home
+    
+    const [list, setArray] = useState([]);
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
+    useEffect(() => {
+        axios.get("http://10.0.0.142:8007/friendlyfaces/").then((responseGet) => setArray(responseGet.data));
+    }, []);
+    
+    CancelToken: source.token;
+
+    const removeImage = (name) => {
+        var formData = new FormData();
+        formData.append("Name", name);
+        axios.delete("http://10.0.0.142:8007/friendlyfaces/", formData)
+    } 
+
+
+    return (
+        <div class=" ui clearing segment">
+        <div style={{ paddingLeft: '8px' }}>
+            <div>
+                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+
+                <h1 class="ui header">WelcomeIN</h1>
+                <div class="ui inverted menu">
+                    <Link href="/index">
+                        <a className="item">
+                            Home
             </a>
-        </Link>
-    <a class="active item">
-      Authroized Individuals
+                    </Link>
+                    <a class="active item">
+                        Authorized Individuals
       </a>
-      <Link href="/settings">
-          <a className="item">
-          Notification Settings
+                    <Link href="/footage">
+                        <a className="item">
+                            Footage
             </a>
-        </Link>
-        <Link href="/footage">
-          <a className="item">
-          Footage
+                    </Link>
+                    <Link href="/settings">
+                        <a className="item">
+                            Settings
             </a>
-        </Link>
+                    </Link>
 
-    </div>
-      <div>
-            <Grid>
-                <Grid.Row columns={4}>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/prototypen/w_sexy_gr.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://i.pinimg.com/originals/73/03/7c/73037c827f6599e99b67a47ec78ea3ab.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://i.dailymail.co.uk/i/newpix/2018/03/19/20/4A59925C00000578-0-image-a-21_1521491098500.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://images.huffingtonpost.com/2014-07-24-ino.jpg' size='small'/>
-                </Grid.Column>
-                </Grid.Row>
+                </div>
+            </div>
 
-                <Grid.Row columns={4}>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://st.depositphotos.com/1011382/2845/i/950/depositphotos_28451549-stock-photo-real-normal-person-portrait.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://i.pinimg.com/originals/30/e2/c4/30e2c4412ad3eb60c32a536401d7752f.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://i.dailymail.co.uk/i/pix/2014/02/11/article-2557079-1B65993300000578-704_306x423.jpg' size='small'/>
-                </Grid.Column>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/prototypen/m_sexy_gr.jpg' size='small'/>
-                </Grid.Column>
-                </Grid.Row>
+            <div>
+                <Modal trigger={
+                    <Link href="/manageIndividuals"><button style={{ marginTop: '16px' }} class="medium ui button">
+                        Manage Authorized Individuals
+            </button>
+                    </Link>
+                }>
+                    <Modal.Header>Select a Photo</Modal.Header>
+                    <Modal.Content image>
+                        <Image wrapped size='medium' src='http://10.0.0.142/facial-recognition-application/sean.droke/FacialRecognitionRepo/backend/media/FriendlyFaces/dani_cXVUGbP.PNG' />
+                        <Modal.Description>
+                            <Header>Upload a photo of authorized individual</Header>
+                            <p>
+                                <form className="ui form">
+                                    <div className="field">
+                                        <label></label>
+                                        <input name="image" type="text" placeholder="image...">
+                                        </input>
+                                        <Divider horizontal></Divider>
+                                        <button class="small ui button">
+                                            Upload Image
+                        </button>
 
-                <Grid.Row columns={3}>
-                <Grid.Column>
-                <Image
-                    fluid
-                    label={{
-                    as: 'a',
-                    color: 'black',
-                    content: 'Name',
-                    ribbon: true,
-                    }}
-                    src='https://external-preview.redd.it/VMlhpumIa6oUH0yrTp3jOBkhqre8wc1woOs3Fu8Xhyo.jpg?auto=webp&s=9d5034c105fc73275b429e22e8197ff72e32a73b' size='small'/>
-                </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                                    </div>
+                                </form>
+                            </p>
+                        </Modal.Description>
+                    </Modal.Content>
+                </Modal>
+                <Divider horizontal></Divider>
+                <div class="ui fitted divider"></div>
+                <Divider horizontal></Divider>
+            </div>
+
+            <div>
+                <Grid>
+                    <Grid.Row columns={4}>
+                        
+                        {list.map(ele => (
+                            <Grid.Column>
+                                <Image
+                                    fluid
+                                    label={{
+                                        as: 'a',
+                                        color: 'black',
+                                        content: ele.Name,
+                                        ribbon: true,
+                                    }}
+                                    src={ele.Image} size='small' />
+                                <button onClick = {removeImage(ele.Name)} class="ui negative basic button">Delete</button>
+                            </Grid.Column>
+
+                        ))}
+                    </Grid.Row>
+                </Grid>
 
 
+                </div>
+            </div>
+        </div>)
 
-      </div>
-    </div>
-  }
-  
-  export default Users
+
+}
+
+
+export default Users
