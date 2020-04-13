@@ -14,3 +14,22 @@ class FriendlyFacesHandler(models.Model):
 class AccessHistoryHandler(models.Model):
     FileField = models.FileField(upload_to='AccessFaces/')
     UpladTime = models.DateTimeField(auto_now_add=True)
+
+class UserSettingsHandler(models.Model):
+    name = models.TextField()
+    email = models.TextField()
+    smsnumber = models.TextField()
+    houseaddress = models.TextField()
+    user = models.TextField()
+
+class UserToggleSettings(models.Model):
+    strangernotifications = models.BooleanField()
+    authorizednotifications = models.BooleanField()
+    receivesms = models.BooleanField()
+    receiveemail = models.BooleanField()
+    user = models.TextField()
+
+class LoggingUtilities(models.Model):
+    FileField = models.FileField(upload_to='LoggingUtilities/')
+    EventTime = models.DateTimeField()
+    AccessType = models.TextField()

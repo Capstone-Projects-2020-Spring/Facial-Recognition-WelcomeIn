@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('footage/', views.FootageHandlerFormView, name='FootageHandlerFormView'),
     path('friendlyfaces/', views.FriendlyFacesHandlerFormView, name='FriendlyFacesHandlerFormView'),
-    path('VerifyAccess/', views.VerifyAccess, name="VerifyAccess")
+    path('VerifyAccess/', views.VerifyAccess, name="VerifyAccess"),
+    path('userpersonalsettings/', views.PersonalUserInformation, name="userpersonalsettings"),
+    path('usertogglesettings/', views.UserToggleInformation, name="usertogglesettings"),
+    path('userlogging/', views.LoggingUtilityHandler, name="userlogging")
 ]

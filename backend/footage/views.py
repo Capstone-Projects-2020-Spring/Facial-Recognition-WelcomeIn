@@ -1,11 +1,17 @@
-from django.http import HttpResponse, FileResponse
+from django.http import HttpResponse, FileResponse, QueryDict
 from django.core.files import File
-from .models import FootageHandler, FriendlyFacesHandler, AccessHistoryHandler
+from django.core import serializers
+from .models import FootageHandler, FriendlyFacesHandler, AccessHistoryHandler, UserSettingsHandler, UserToggleSettings, LoggingUtilities
 from django.views.decorators.csrf import csrf_exempt
 import os
 import json
 import face_recognition
 import numpy as np
+from twilio.rest import Client
+from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+from backend.settings import EMAIL_HOST_USER
+from django.conf import settings
 
 @csrf_exempt
 def FootageHandlerFormView(request):
@@ -40,7 +46,18 @@ def FootageHandlerFormView(request):
         image_data = open(os.getcwd() + all_entries[0].FileField.url, "rb").read()
         print(image_data)
         '''
-        return FileResponse(open(os.getcwd() + all_entries[len(all_entries)-1].FileField.url, "rb"))
+
+        filesArray = []
+        
+        for each in all_entries:
+            quick = os.getcwd()
+            filesArray.append({"url": 'http://10.0.0.142' + quick.replace('/var/www/html', '') + each.FileField.url, "date": str(each.FileDate)})
+
+        asJson = json.dumps(filesArray)
+
+        ##return FileResponse(open(os.getcwd() + all_entries[len(all_entries)-1].FileField.url, "rb"))
+
+        return HttpResponse(asJson)
 
         #return HttpResponse('Deleted')
 
@@ -52,8 +69,6 @@ def FriendlyFacesHandlerFormView(request):
         FirendlyFacesHandlers.FileField = request.FILES.get("FileField")
         FirendlyFacesHandlers.Name = request.POST.get('Name')
 
-        print(FirendlyFacesHandlers.FileField)
-
         try:
             FirendlyFacesHandlers.save()
         except:
@@ -62,7 +77,7 @@ def FriendlyFacesHandlerFormView(request):
 
         return HttpResponse('Success')
 
-    else:
+    if request.method == 'GET':
 
         ##FriendlyFacesHandler.objects.all().delete()
 
@@ -81,6 +96,14 @@ def FriendlyFacesHandlerFormView(request):
         return_obj = json.dumps(return_json)
 
         return HttpResponse(return_obj)
+
+    if request.method == 'DELETE':
+        data = QueryDict(request.body)
+        toDelete = FriendlyFacesHandler.objects.get(Name=str(data['Name']))
+        toDelete.delete()
+        return HttpResponse("SUCCESS")
+
+    
 
 @csrf_exempt
 def VerifyAccess(request):
@@ -104,7 +127,195 @@ def VerifyAccess(request):
         
         result = face_recognition.compare_faces(KnownAccessList, enconded_attempted)
 
+        currentUserSettings = UserSettingsHandler.objects.get(user="admin")
+        toggleSettings = UserToggleSettings.objects.get(user="admin")
+        # If a friendly face was recognized
         if(True in result):
-            return HttpResponse("Access Granted")
+            # If they want notifications for friendly faces
+            if(toggleSettings.authorizednotifications == True):
+
+                new_obj = LoggingUtilities()
+                new_obj.FileField = AccessAttempt.FileField()
+                new_obj.EventTime = AccessAttempt.UpladTime
+                new_obj.AccessType = "Authorized Access Granted"
+                new_obj.save()
+                # If they want email notifications for friendly faces
+                if(toggleSettings.receiveemail == True):
+                    send_mail(
+                        'Access Granted',
+                        'A friendly face has opened the door at ' + str(AccessAttempt.UpladTime),
+                        EMAIL_HOST_USER,
+                        [str(currentUserSettings.email)],
+                        fail_silently=False,
+                    )
+                    # If they want sms notifications for friendly faces
+                if(toggleSettings.receivesms == True):
+                    client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+                    client.messages.create(to=str(currentUserSettings.smsnumber), from_=settings.TWILIO_NUMBER, body="A friendly face has opened the door at " + str(AccessAttempt.UpladTime))
+
+            return HttpResponse(True)
+        # A friendly face was not recognized    
         else:
-            return HttpResponse("Access Denied")
+            
+            new_obj = LoggingUtilities()
+            new_obj.FileField = AccessAttempt.FileField()
+            new_obj.EventTime = AccessAttempt.UpladTime
+            new_obj.AccessType = "Unauthorized Access Denied"
+            new_obj.save()
+            # If they want notifications for strangers
+            if(toggleSettings.strangernotifications == True):
+                currentUserSettings = UserSettingsHandler.objects.get(user="admin")
+                # If they want email notifications for strangers
+                if(toggleSettings.receiveemail == True):
+                    send_mail(
+                        'Access Denied',
+                        'A stranger has tried to access the door at ' + str(AccessAttempt.UpladTime),
+                        EMAIL_HOST_USER,
+                        [str(currentUserSettings.email)],
+                        fail_silently=False,
+                    )
+                # If they want sms notifications for strangers
+                if(toggleSettings.receivesms == True):
+                    client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+                    client.messages.create(to=str(currentUserSettings.smsnumber), from_=settings.TWILIO_NUMBER, body="A stranger has tried to access the door at " + str(AccessAttempt.UpladTime))
+            # I'm working on this... I need to figure out how to get the filename of the video or picture
+            # we want to attach to the email/text. I was thinking about using something like the url on line 124.
+            # email = EmailMessage(
+            #     'Access Denied',
+            #     'A stranger has tried to access the door at ' + str(AccessAttempt.UpladTime),
+            #     EMAIL_HOST_USER,
+            #     [str(currentUserSettings.email)],
+            # )
+            # video = 
+            # email.attach('design.png', img_data, 'image/png')
+            return HttpResponse(False)
+
+@csrf_exempt
+def PersonalUserInformation(request):
+    if request.method == 'POST':
+        
+        request_user = request.POST.get("user")
+        print(request_user)
+        request_email = request.POST.get("email")
+        request_name = request.POST.get("name")
+        request_smsnumber = request.POST.get("smsnumber")
+        request_houseaddress = request.POST.get("houseaddress")
+
+        try:
+            toUpdate = UserSettingsHandler.objects.get(user=str(request_user))
+            toUpdate.name = str(request_name)
+            toUpdate.email = str(request_email)
+            toUpdate.smsnumber = str(request_smsnumber)
+            toUpdate.houseaddress = str(request_houseaddress)
+            toUpdate.save()
+        
+        except UserSettingsHandler.DoesNotExist:
+            newObject = UserSettingsHandler()
+            newObject.name = str(request_name)
+            newObject.email = str(request_email)
+            newObject.smsnumber = str(request_smsnumber)
+            newObject.houseaddress = str(request_houseaddress)
+            newObject.user = str(request_user)
+            newObject.save()
+        
+        return HttpResponse("POST Succesful")
+
+    if request.method == 'GET':
+
+        request_user = request.GET.get("user")
+
+        obtainSettings = UserSettingsHandler.objects.get(user="admin")
+        forjson = {"name": obtainSettings.name, "email": obtainSettings.email, "smsnumber": obtainSettings.smsnumber, "houseaddress": obtainSettings.houseaddress}
+        asjson = json.dumps(forjson)
+        return HttpResponse(asjson)
+
+@csrf_exempt
+def UserToggleInformation(request):
+    if request.method == 'POST':
+        
+        request_user = str(request.POST.get("user"))
+        request_strangernotifications = str(request.POST.get("strangernotifications"))
+        request_authorizednotifications = str(request.POST.get("authorizednotifications"))
+        request_receivesms = str(request.POST.get("receivesms"))
+        request_receiveemail = str(request.POST.get("receiveemail"))
+
+        if(str(request.POST.get("strangernotifications")) == "true"):
+            request_strangernotifications = True
+        else:
+            request_strangernotifications = False
+
+        if(str(request.POST.get("authorizednotifications")) == "true"):
+            request_authorizednotifications = True
+        else:
+            request_authorizednotifications = False
+
+        if(str(request.POST.get("receivesms")) == "true"):
+            request_receivesms = True
+        else:
+            request_receivesms = False
+
+        if(str(request.POST.get("receiveemail")) == "true"):
+            request_receiveemail = True
+        else:
+            request_receiveemail = False
+
+        try:
+            toUpdate = UserToggleSettings.objects.get(user=str(request_user))
+            toUpdate.strangernotifications = request_strangernotifications
+            toUpdate.authorizednotifications = request_authorizednotifications
+            toUpdate.receivesms = request_receivesms
+            toUpdate.receiveemail = request_receiveemail
+            toUpdate.save()
+        
+        except UserToggleSettings.DoesNotExist:
+            newObject = UserToggleSettings()
+            newObject.strangernotifications = request_strangernotifications
+            newObject.authorizednotifications = request_authorizednotifications
+            newObject.receivesms = request_receivesms
+            newObject.receiveemail = request_receiveemail
+            newObject.user = request_user
+            newObject.save()
+
+        return HttpResponse("POST Succesful")
+
+    else:
+        
+        request_user = request.GET.get("user")
+
+        obtainSettings = UserToggleSettings.objects.get(user="admin")
+        forjson = {"strangernotifications": obtainSettings.strangernotifications, "authorizednotifications": obtainSettings.authorizednotifications, "receivesms": obtainSettings.receivesms, "receiveemail": obtainSettings.receiveemail}
+        asjson = json.dumps(forjson)
+        return HttpResponse(asjson)
+
+@csrf_exempt
+def LoggingUtilityHandler(request):
+    if request.method == 'POST':
+        request_FileField = request.FILES.get('FileField')
+        request_EventTime = request.POST.get('EventTime')
+        request_AccessType = request.POST.get('AccessType')
+
+        new_object = LoggingUtilities()
+        new_object.FileField = request_FileField
+        new_object.EventTime = request_EventTime
+        new_object.AccessType = request_AccessType
+
+        new_object.save()
+
+        return HttpResponse("Success")
+
+    else:
+
+        return_array = []
+
+        object_list = LoggingUtilities.objects.all()
+
+        for item in object_list:
+            return_array.append({'URL': item.FileField.url, 'EventTime': item.EventTime, 'AccessType': item.AccessTime})
+
+        as_json = json.dumps(return_array)
+
+        return HttpResponse(as_json)
+
+        
+
+
